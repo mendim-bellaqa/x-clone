@@ -55,6 +55,14 @@
                                 {{ __('Login') }}
                             </button>
                         </div>
+
+                           <div class="mb-4">
+                            <a href="/register">
+                                <div class="bg-blue-500 text-white text-center p-2 rounded w-full hover:bg-blue-700">
+                                    Register
+                                </div>
+                            </a>
+                        </div>
                     </form>
                 </div>
             </div>

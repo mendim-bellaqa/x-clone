@@ -3,22 +3,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User; // Make sure User model is imported
 
 class Tweet extends Model
 {
     use HasFactory;
-    // User.php
-    public function tweets()
+
+    // Define relationships and methods here
+
+    public function likedBy(User $user)
     {
-        return $this->hasMany(Tweet::class);
+        return $this->likes->contains('user_id', $user->id);
     }
 
-    public function timeline()
+    public function likes()
     {
-        return Tweet::whereIn('user_id', $this->follows->pluck('id'))
-            ->orWhere('user_id', $this->id)
-            ->latest()
-            ->get();
+        return $this->belongsToMany(User::class, 'likes', 'tweet_id', 'user_id');
     }
+
 
 }

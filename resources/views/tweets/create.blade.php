@@ -181,8 +181,16 @@
                                                             </div>
                                                   </div>
                                                   </div>
-                                                  </div>
+                                               
 
+                                                  </div>
+                                                  <div class="flex-1 text-center pt-5 pb-5 mt-2 text-white font-semibold hover:text-white py-2 px-4 border border-transparent hover:border-white rounded-full">
+                                                  <form method="POST" action="{{ route('tweets.store') }}" enctype="multipart/form-data">
+                                                        <!-- Other tweet fields -->
+                                                        <input type="file" name="images[]" accept="image/*" multiple>
+                                                        <!-- Submit button and other fields -->
+                                                    </form>
+                                                    </div>
                                                   <div class="flex-1">
                                                             <button type="submit" class="bg-blue-400 hover:bg-blue-500 mt-5 text-white font-bold py-2 px-8 rounded-full mr-8 float-right">
                                                                       Tweet
@@ -285,7 +293,7 @@
 
                    
 
-                            <input type="search" name="search" placeholder="Search Twitter" class=" bg-dim-700 h-10 px-10 pr-5 w-full rounded-full text-sm focus:outline-none bg-purple-white shadow rounded border-0">
+                            <input type="search" name="search" placeholder="Search Twitter" class=" bg-dim-700 h-10 px-10 pr-5 w-full text-sm focus:outline-none bg-purple-white shadow rounded border-0">
                         </div>
                                 <!--trending tweet section-->
                         <div class="max-w-sm rounded-lg bg-dim-700 overflow-hidden shadow-lg m-4">

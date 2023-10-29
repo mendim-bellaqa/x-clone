@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>X. It's what's happening / X</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -42,6 +42,7 @@
                                 <div class="flex justify-center">
 
                                     <header class="text-white h-12 py-4 h-auto">
+                                        
                                         <!-- Navbar (left side) -->
                                         <div style="width: 275px;">
                             <div class="overflow-y-auto fixed h-screen pr-3" style="width: 275px;">
@@ -56,7 +57,8 @@
 
                                 <!-- Nav-->
                                 <nav class="mt-5 px-2">
-                                    <a href="#" class="group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full bg-gray-800 text-blue-300">
+                                    
+                                    <a href="/" class="group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full bg-gray-800 text-blue-300">
                                         <svg class="mr-4 h-6 w-6 " stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"></path>
                                         </svg>
@@ -119,18 +121,24 @@
                                 <!-- User Menu -->
                                 <div class="absolute" style="bottom: 2rem;">
                             <div class="flex-shrink-0 flex hover:bg-gray-800 rounded-full px-4 py-3 mt-12 mr-2">
-                                    <a href="#" class="flex-shrink-0 group block">
+                                    <a href="/" class="flex-shrink-0 group block">
                                         <div class="flex items-center">
                                             <div>
-                                                <img class="inline-block h-10 w-10 rounded-full" src="https://pbs.twimg.com/profile_images/1254779846615420930/7I4kP65u_400x400.jpg" alt="">
+                                                <img class="inline-block h-10 w-10 rounded-full" src="https://img.freepik.com/free-vector/hand-drawn-side-profile-cartoon-illustration_23-2150517168.jpg?w=740&t=st=1698539186~exp=1698539786~hmac=44d4048cc4620bdba36a6ab6ea6c11acc143e039c6b7610b1112c5da0621ef17" alt="">
                                             </div>
                                             <div class="ml-3">
+                                            @if (Auth::check()) 
                                                 <p class="text-base leading-6 font-medium text-white">
-                                                    ℜ??????ℜ??????.dev
+                                                {{ $user->name }}
                                                 </p>
                                                 <p class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                                                    @Ricardo_oRibeir
+                                                {{ $user->email }}
                                                 </p>
+                                            
+                                            @else
+                                            <a href="/login">Log In</a>
+                                            @endif
+                                          
                                             </div>
                                         </div>
                                     </a>
@@ -138,13 +146,20 @@
                         </div>
                             </div>
                         </div>
-                                    </header>
+                    </header>
 
-                                    <main role="main">
-                                        <div class="flex" style="width: 990px;">
-                                            <section class="w-3/5 border border-y-0 border-gray-800" style="max-width:600px;">
-                                                <!--Content (Center)-->
-                                                    <aside>
+                    <main role="main">
+
+                        <div class="flex" style="width: 990px;">
+                            <section class="w-3/5 border border-y-0 border-gray-800" style="max-width:600px;">
+
+                            <!--Content (Center)-->
+                                <aside>
+                                <div class="grid grid-cols-3 gap-4">
+                                    <div class="col-span-2 border-2 border border-y-0 border-b-4 border-blue-800 shadow-md text-white p-4">For you</div>
+                                    <div class="border-2 border border-y-0 border-gray-800 text-gray-500 p-4">Following</div>
+                                </div>
+
                             <div class="flex">
                                 <div class="flex-1 mx-2">
                                     <h2 class="px-4 py-2 text-xl font-semibold text-white">Home</h2>
@@ -165,7 +180,7 @@
                             <!--middle creat tweet-->
                             <div class="flex">
                                 <div class="m-2 w-10 py-1">
-                                    <img class="inline-block h-10 w-10 rounded-full" src="https://pbs.twimg.com/profile_images/1121328878142853120/e-rpjoJi_bigger.png" alt="">
+                                    <img class="inline-block h-10 w-10 rounded-full" src="https://img.freepik.com/free-vector/hand-drawn-side-profile-cartoon-illustration_23-2150503804.jpg?w=740&t=st=1698539468~exp=1698540068~hmac=873cb648a1b00c010de37602eb590f42d85271360875a64664da317cb75ed665" alt="">
                                 </div>
                                 <div class="flex-1 px-2 pt-2 mt-2">
                                     <textarea class=" bg-transparent text-gray-400 font-medium text-lg w-full" rows="2" cols="50" placeholder="What's happening?"></textarea>
@@ -226,97 +241,93 @@
 
                             <hr class="border-gray-800 border-4">
                         </aside>
+                        
 
-                            <ul class="list-none">
-                                            <li>
-                                         
-                                            <!--second tweet-->
-                        <article class="hover:bg-gray-800 transition duration-350 ease-in-out">
-                            <div class="flex flex-shrink-0 p-4 pb-0">
-                                <a href="#" class="flex-shrink-0 group block">
-                                    <div class="flex items-center">
-                                        <div>
-                                            <img class="inline-block h-10 w-10 rounded-full" src="https://pbs.twimg.com/profile_images/1121328878142853120/e-rpjoJi_bigger.png" alt="">
+                       <main class="h-full w-full bg-gray-50 flex items-center justify-center">
+                            <div class=" max-w-screen-md bg-grey-900 pt-11 pb-11 text-white">
+                            @foreach($tweets as $tweet)
+                                <div class="flex items-center justify-between">
+                                    <div class="gap-3.5 flex items-center">
+                                        @if ($tweet->user)
+                                                <div class="flex flex-col">
+                                            <b class="mb-2 capitalize">{{ $tweet->user->name }}</b>
+                                            <time datetime="{{ $tweet->created_at }}" class="text-gray-400 text-xs">
+                                                {{ $tweet->created_at->format('d F \a\t H:i A') }}
+                                            </time>
                                         </div>
-                                        <div class="ml-3">
-                                            <p class="text-base leading-6 font-medium text-white">
-                                                Sonali Hirave
-                                                <span class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                                                    @ShonaDesign  . 16 April
-                                                </span>
-                                            </p>
+                                        @endif
+                                    </div>
+                                    <div class="bg-gray-800 rounded-full h-3.5 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="34px" fill="#92929D">
+                                            <path d="M0 0h24v24H0V0z" fill="none" />
+                                            <path
+                                                d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="whitespace-pre-wrap text-white mb-9 mt-7">{{ $tweet->title }}</div>
+
+                                <div class=" h-16 border-b flex items-center justify-around">
+                                    <div class="flex items-center gap-3">
+                                        <svg width="20px" height="19px" viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.5139395,15.2840977 L6.06545155,18.6848361 C5.05870104,19.4544672 3.61004168,18.735539 3.60795568,17.4701239 L3.60413773,15.1540669 C1.53288019,14.6559967 0,12.7858138 0,10.5640427 L0,4.72005508 C0,2.11409332 2.10603901,0 4.70588235,0 L15.2941176,0 C17.893961,0 20,2.11409332 20,4.72005508 L20,10.5640427 C20,13.1700044 17.893961,15.2840977 15.2941176,15.2840977 L10.5139395,15.2840977 Z M5.60638935,16.5183044 L9.56815664,13.4896497 C9.74255213,13.3563295 9.955971,13.2840977 10.1754888,13.2840977 L15.2941176,13.2840977 C16.7876789,13.2840977 18,12.0671403 18,10.5640427 L18,4.72005508 C18,3.21695746 16.7876789,2 15.2941176,2 L4.70588235,2 C3.21232108,2 2,3.21695746 2,4.72005508 L2,10.5640427 C2,12.0388485 3.1690612,13.2429664 4.6301335,13.28306 C5.17089106,13.297899 5.60180952,13.7400748 5.60270128,14.2810352 L5.60638935,16.5183044 Z"
+                                                id="Path"></path>
+                                        </svg>
+                                        
+                                        <div class="flex items-center justify-between mt-4">
+                                            @foreach($tweets as $tweet)
+                                                     <div class="flex items-center justify-between bg-gray-50 h-11 w-11/12 px-4">
+                                                        <form method="POST" action="{{ route('comments.store', $tweet->id) }}">
+                                                            @csrf
+                                                            <input type="text" class="h-full w-full bg-black text-white text-center outline-none" placeholder="Write your comment..." name="comment">
+                                                        </form>
+                                                    </div>
+                                            @endforeach
                                         </div>
+
+
+
+
                                     </div>
-                                </a>
+                                    <div class="flex items-center gap-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <div class="text-sm">{{ $tweet->likes->count() }} Likes</div>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <svg width="22px" height="22px" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M4,0 C6.209139,0 8,1.790861 8,4 C8,4.1291298 7.99388117,4.25683047 7.98191762,4.38282788 L15.371607,7.98470389 C16.0745405,7.37145444 16.9938914,7 18,7 C20.209139,7 22,8.790861 22,11 C22,13.209139 20.209139,15 18,15 C16.9572434,15 16.0076801,14.6009919 15.2956607,13.9473263 L7.98384745,17.6380767 C7.99453877,17.7572882 8,17.8780063 8,18 C8,20.209139 6.209139,22 4,22 C1.790861,22 0,20.209139 0,18 C0,15.790861 1.790861,14 4,14 C5.37147453,14 6.58173814,14.690226 7.30236849,15.7422555 L14.2017356,12.2577203 C14.0708451,11.8622268 14,11.4393868 14,11 C14,10.5276126 14.0818865,10.0743509 14.2322392,9.65363512 L7.29274641,6.27172794 C6.57099412,7.31588608 5.36538874,8 4,8 C1.790861,8 0,6.209139 0,4 C0,1.790861 1.790861,0 4,0 Z M4,16 C2.8954305,16 2,16.8954305 2,18 C2,19.1045695 2.8954305,20 4,20 C5.1045695,20 6,19.1045695 6,18 C6,16.8954305 5.1045695,16 4,16 Z M18,9 C16.8954305,9 16,9.8954305 16,11 C16,12.1045695 16.8954305,13 18,13 C19.1045695,13 20,12.1045695 20,11 C20,9.8954305 19.1045695,9 18,9 Z M4,2 C2.8954305,2 2,2.8954305 2,4 C2,5.1045695 2.8954305,6 4,6 C5.1045695,6 6,5.1045695 6,4 C6,2.8954305 5.1045695,2 4,2 Z"
+                                                id="Combined-Shape"></path>
+                                        </svg>
+                                        <div class="text-sm">Share</div>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <svg width="17px" height="22px" viewBox="0 0 17 22" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M2.85714286,-0.952380952 L12.1428571,-0.952380952 C14.246799,-0.952380952 15.952381,0.753200953 15.952381,2.85714286 L15.952381,18.2119141 C15.952381,19.263885 15.09959,20.116746 14.047619,20.116746 C13.6150601,20.116746 13.1953831,19.9694461 12.8576286,19.6992071 L7.5,15.4125421 L2.14237143,19.6992071 C1.32096217,20.3564207 0.122301512,20.2233138 -0.534912082,19.4019046 C-0.805151112,19.0641501 -0.952380952,18.644473 -0.952380952,18.2119141 L-0.952380952,2.85714286 C-0.952380952,0.753200953 0.753200953,-0.952380952 2.85714286,-0.952380952 Z M2.85714286,0.952380952 C1.80517191,0.952380952 0.952380952,1.80517191 0.952380952,2.85714286 L0.952380952,18.2119141 L6.31000952,13.9252491 C7.00569973,13.3686239 7.99430027,13.3686239 8.68999048,13.9252491 L14.047619,18.2119141 L14.047619,2.85714286 C14.047619,1.80517191 13.1948281,0.952380952 12.1428571,0.952380952 L2.85714286,0.952380952 Z"
+                                                id="Rectangle-92"></path>
+                                        </svg>
+                                        <div class="text-sm">Saved</div>
+                                    </div>
+                                </div>
+                                @endforeach
                             </div>
+                        </main>
 
 
-                            <div class="pl-16">
-                                <p class="text-base width-auto font-medium text-white flex-shrink">
-                                    Day 07 of the challenge <a href="#" class="text-blue-400">#100DaysOfCode</a>
-                                    I was wondering what I can do with <a href="#" class="text-blue-400">#tailwindcss</a>, so just started building
-                                    Twitter UI using Tailwind and so far it looks so promising. I will post my code after completion.
-                                    [07/100]
-                                    <a href="#" class="text-blue-400"> #WomenWhoCode #CodeNewbie</a>
-                                </p>
 
-                                <div class="md:flex-shrink pr-6 pt-3">
-                                    <div class="bg-cover bg-no-repeat bg-center rounded-lg w-full h-64" style="height: 200px; background-image: url(https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=448&amp;q=80);">
-                                    <img class="opacity-0 w-full h-full" src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=448&amp;q=80" alt="">
-                                </div>
-                                </div>
+                    </section>
 
 
-                                <div class="flex items-center py-4">
-                                    <div class="flex-1 flex items-center text-white text-xs text-gray-400 hover:text-blue-400 transition duration-350 ease-in-out">
-                                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2">
-                                        <g>
-                                        <path d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z"></path>
-                                        </g>
-                                    </svg>
-                                    12.3 k
-                                    </div>
-                                    <div class="flex-1 flex items-center text-white text-xs text-gray-400 hover:text-green-400 transition duration-350 ease-in-out">
-                                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2">
-                                        <g>
-                                        <path d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z"></path>
-                                        </g>
-                                    </svg>
-                                    14 k
-                                    </div>
-                                    <div class="flex-1 flex items-center text-white text-xs text-gray-400 hover:text-red-600 transition duration-350 ease-in-out">
-                                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2">
-                                        <g>
-                                        <path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"></path>
-                                        </g>
-                                    </svg>
-                                    14 k
-                                    </div>
-                                    <div class="flex-1 flex items-center text-white text-xs text-gray-400 hover:text-blue-400 transition duration-350 ease-in-out">
-                                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2">
-                                        <g>
-                                        <path d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z"></path>
-                                        <path d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z"></path>
-                                        </g>
-                                    </svg>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <hr class="border-gray-800">
-                        </article>
-                                    </li>
-                                    </ul>
-                                            </section>
-
-
-                                            <aside class="w-2/5 h-12 position-relative">
-                                                <!--Aside menu (right side)-->
-                                                        <div style="max-width:350px;">
+                    <aside class="w-2/5 h-12 position-relative">
+                        <!--Aside menu (right side)-->
+                                <div style="max-width:350px;">
                             <div class="overflow-y-auto fixed  h-screen">
-
-
-
 
                                         <div class="relative text-gray-300 w-80 p-5">
                             <button type="submit" class="absolute ml-4 mt-3 mr-4">

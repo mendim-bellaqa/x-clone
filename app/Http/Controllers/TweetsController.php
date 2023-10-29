@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Tweet;
+use App\Http\Controllers\CommentController;
 
 class TweetsController extends Controller
 {
@@ -15,20 +16,21 @@ class TweetsController extends Controller
 
     public function store(Request $request)
     {
-        // Validate the tweet content
-        $this->validate($request, [
-            'content' => 'required|max:255',
+        // Validate tweet fields (title, content, etc.)
+    
+       
+    
+        $tweet = new Tweet([
+            'title' => $request->input('title'),
+            'content' => $request->input('content'),
         ]);
-
-        // Create a new tweet
-        $tweet = new Tweet();
-        $tweet->content = $request->input('content');
-        $tweet->user_id = auth()->user()->id; // Assuming you are using user authentication
-
+    
+        // Save the tweet to the database
         $tweet->save();
-
-        return redirect()->route('tweets.index');
+    
+        // Redirect or return a response
     }
+    
 
     public function index()
     {

@@ -40,12 +40,19 @@
                     <label for="password-confirm" class="block  text-sm font-bold mb-2">Confirm Password</label>
                     <input id="password-confirm" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="password_confirmation" required autocomplete="new-password">
                 </div>
-
+                <div class="mb-4">
                 <div class="flex items-center justify-between">
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    <button type="submit" class="bg-blue-500 text-white text-center p-2 rounded w-full hover:bg-blue-700">
                         Register
                     </button>
                 </div>
+                </div>
+                    <div class="mb-4">
+                    <a href="/login">
+                        <div class="bg-blue-500 text-white text-center p-2 rounded w-full hover:bg-blue-700">
+                            Login
+                        </div>
+                    </a>
             </form>
         </div>
     </div>
