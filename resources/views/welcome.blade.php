@@ -117,6 +117,9 @@
                                     </a>
                                 </nav>
 
+                                <div id="app">
+                                    <my-vue-component></my-vue-component>
+                                </div>
 
                                 <!-- User Menu -->
                                 <div class="absolute" style="bottom: 2rem;">
