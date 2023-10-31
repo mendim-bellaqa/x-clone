@@ -31,7 +31,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/tweets', [TweetsController::class, 'index'])->name('tweets.index');
     Route::post('/tweets/{tweet}/like', [LikeController::class, 'like'])->name('tweets.like');
     Route::delete('/tweets/{tweet}/unlike', [LikeController::class, 'unlike'])->name('tweets.unlike');
-    Route::post('/comments/{tweet}', 'CommentController@store')->name('comments.store');
+     Route::post('/comments/{tweet}', [CommentController::class, 'store'])->name('comments.store');
 
 });
 

@@ -37,116 +37,113 @@
                 </div>
             @endif
 
-            <!-- component -->
-                        <div class="p-relative h-screen" style="background-color: #15202b">
-                                <div class="flex justify-center">
+        <!-- component -->
+        <div class="p-relative h-screen" style="background-color: #15202b">
+            <div class="flex justify-center">
+            <header class="text-white h-12 py-4 h-auto">
 
-                                    <header class="text-white h-12 py-4 h-auto">
-                                        
-                                        <!-- Navbar (left side) -->
-                                        <div style="width: 275px;">
-                            <div class="overflow-y-auto fixed h-screen pr-3" style="width: 275px;">
-                                <!--Logo-->
-                                <svg viewBox="0 0 24 24" class="h-8 w-8 text-white ml-3" fill="currentColor">
-                                    <g>
-                                        <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z">
-                                        </path>
-                                    </g>
-                                </svg>
+            <!-- Navbar (left side) -->
+            <div style="width: 275px;">
+            <div class="overflow-y-auto fixed h-screen pr-3" style="width: 275px;">
 
+                <!--Logo-->
+                <svg viewBox="0 0 24 24" class="h-8 w-8 text-white ml-3" fill="currentColor">
+                    <g>
+                        <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z">
+                        </path>
+                    </g>
+                </svg>
 
-                                <!-- Nav-->
-                                <nav class="mt-5 px-2">
-                                    
-                                    <a href="/" class="group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full bg-gray-800 text-blue-300">
-                                        <svg class="mr-4 h-6 w-6 " stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"></path>
-                                        </svg>
-                                        Home
-                                    </a>
-                                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full hover:bg-gray-800 hover:text-blue-300">
-                                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path>
-                                        </svg>
+                <!-- Nav-->
+                <nav class="mt-5 px-2">
+                    
+                    <a href="/" class="group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full bg-gray-800 text-blue-300">
+                        <svg class="mr-4 h-6 w-6 " stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"></path>
+                        </svg>
+                        Home
+                    </a>
+                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full hover:bg-gray-800 hover:text-blue-300">
+                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path>
+                        </svg>
 
-                                        Explore
-                                    </a>
-                                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
-                                            </path>
-                                        </svg>
-                                        Notifications
-                                    </a>
-                                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                                            </path>
-                                        </svg>
-                                        Messages
-                                    </a>
-                                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
-                                        </svg>
-                                        Bookmarks
-                                    </a>
-                                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
-                                            </path>
-                                        </svg>
-                                        Lists
-                                    </a>
-                                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                                        </svg>
-                                        Profile
-                                    </a>
-                                    <a href="/tweets/more" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                        </svg>
-                                        More
-                                    </a>
-                                    <a href="/tweets/create">
-                                    <button class="bg-blue-400 hover:bg-blue-500 w-full mt-5 text-white font-bold py-2 px-4 rounded-full">
-                                        Tweet
-                                    </button>
-                                    </a>
-                                </nav>
+                        Explore
+                    </a>
+                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
+                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                            </path>
+                        </svg>
+                        Notifications
+                    </a>
+                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
+                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                        Messages
+                    </a>
+                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
+                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+                        </svg>
+                        Bookmarks
+                    </a>
+                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
+                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
+                            </path>
+                        </svg>
+                        Lists
+                    </a>
+                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
+                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        Profile
+                    </a>
+                    <a href="/tweets/more" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
+                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        More
+                    </a>
+                    <a href="/tweets/create">
+                    <button class="bg-blue-400 hover:bg-blue-500 w-full mt-5 text-white font-bold py-2 px-4 rounded-full">
+                        Tweet
+                    </button>
+                    </a>
+                </nav>
 
-                                <div id="app">
-                                    <my-vue-component></my-vue-component>
+                <div id="app">
+                    <my-vue-component></my-vue-component>
+                </div>
+
+                <!-- User Menu -->
+                <div class="absolute" style="bottom: 2rem;">
+                    <div class="flex-shrink-0 flex hover:bg-gray-800 rounded-full px-4 py-3 mt-12 mr-2">
+                        <a href="/" class="flex-shrink-0 group block">
+                            <div class="flex items-center">
+                                <div>
+                                    <img class="inline-block h-10 w-10 rounded-full" src="https://img.freepik.com/free-vector/hand-drawn-side-profile-cartoon-illustration_23-2150517168.jpg?w=740&t=st=1698539186~exp=1698539786~hmac=44d4048cc4620bdba36a6ab6ea6c11acc143e039c6b7610b1112c5da0621ef17" alt="">
                                 </div>
-
-                                <!-- User Menu -->
-                                <div class="absolute" style="bottom: 2rem;">
-                            <div class="flex-shrink-0 flex hover:bg-gray-800 rounded-full px-4 py-3 mt-12 mr-2">
-                                    <a href="/" class="flex-shrink-0 group block">
-                                        <div class="flex items-center">
-                                            <div>
-                                                <img class="inline-block h-10 w-10 rounded-full" src="https://img.freepik.com/free-vector/hand-drawn-side-profile-cartoon-illustration_23-2150517168.jpg?w=740&t=st=1698539186~exp=1698539786~hmac=44d4048cc4620bdba36a6ab6ea6c11acc143e039c6b7610b1112c5da0621ef17" alt="">
-                                            </div>
-                                            <div class="ml-3">
-                                            @if (Auth::check()) 
-                                                <p class="text-base leading-6 font-medium text-white">
-                                                {{ $user->name }}
-                                                </p>
-                                                <p class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                                                {{ $user->email }}
-                                                </p>
-                                            
-                                            @else
-                                            <a href="/login">Log In</a>
-                                            @endif
-                                          
-                                            </div>
-                                        </div>
-                                    </a>
+                                <div class="ml-3">
+                                @if (Auth::check()) 
+                                    <p class="text-base leading-6 font-medium text-white">
+                                    {{ $user->name }}
+                                    </p>
+                                    <p class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
+                                    {{ $user->email }}
+                                    </p>
+                                @else
+                                <a href="/login">Log In</a>
+                                @endif
                                 </div>
-                        </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
                             </div>
                         </div>
                     </header>
@@ -179,148 +176,133 @@
                                 </div>
                             </div>
 
-                            <hr class="border-gray-800">
-                            <!--middle creat tweet-->
-                            <div class="flex">
-                                <div class="m-2 w-10 py-1">
-                                    <img class="inline-block h-10 w-10 rounded-full" src="https://img.freepik.com/free-vector/hand-drawn-side-profile-cartoon-illustration_23-2150503804.jpg?w=740&t=st=1698539468~exp=1698540068~hmac=873cb648a1b00c010de37602eb590f42d85271360875a64664da317cb75ed665" alt="">
+                           
+
+                            <form method="POST" action="{{ route('tweets.store') }}" enctype="multipart/form-data" class="shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                                @csrf
+
+                                <div class="flex items-center">
+                                    <div class="w-10">
+                                        <img class="inline-block h-10 w-10 rounded-full" src="https://img.freepik.com/free-vector/hand-drawn-side-profile-cartoon-illustration_23-2150503804.jpg?w=740&t=st=1698539468~exp=1698540068~hmac=873cb648a1b00c010de37602eb590f42d85271360875a64664da317cb75ed665" alt="">
+                                    </div>
+                                    <div class="flex-1 px-2 pt-2 mt-2">
+                                        <input type="text" id="content" name="content" class="bg-transparent text-gray-400 font-medium text-lg w-full focus:outline-none focus:shadow-outline" placeholder="What's happening?" id="tweet_content">
+                                    </div>
                                 </div>
-                                <div class="flex-1 px-2 pt-2 mt-2">
-                                    <textarea class=" bg-transparent text-gray-400 font-medium text-lg w-full" rows="2" cols="50" placeholder="What's happening?"></textarea>
-                                </div>
-                            </div>
-                            <!--middle creat tweet below icons-->
-                            <div class="flex">
-                                <div class="w-10"></div>
 
-                                <div class="w-64 px-2">
-
-                                    <div class="flex items-center">
-                                        <div class="flex-1 text-center px-1 py-1 m-2">
-                                            <a href="#" class="mt-1 group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                                                <svg class="text-center h-7 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                                    </path>
-                                                </svg>
-                                            </a>
-                                        </div>
-
-                                        <div class="flex-1 text-center py-2 m-2">
-                                            <a href="#" class="mt-1 group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                                                <svg class="text-center h-7 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
-                                                    </path>
+                             
+                                
+                                
+                                <div class="flex items-center justify-between mb-5">
+                                     <div class="flex-1 text-center px-1 py-1 m-2 relative">
+                                        <label for="image" class="group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300 cursor-pointer">
+                                            <svg class="h-7 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                            </svg>
+                                            <input type="file" id="image" name="image" class="hidden" accept="image/*">
+                                        </label>
+                                    </div>
+                                    <!-- <div class="flex-1 text-center py-2 m-2">
+                                            <a href="#" class="group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover-bg-gray-800 hover-text-blue-300">
+                                                <svg class="h-7 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
                                                     <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                                 </svg>
                                             </a>
                                         </div>
 
                                         <div class="flex-1 text-center py-2 m-2">
-                                            <a href="#" class="mt-1 group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                                                <svg class="text-center h-7 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                                    </path>
+                                            <a href="#" class="group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover-bg-gray-800 hover-text-blue-300">
+                                                <svg class="h-7 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                                 </svg>
                                             </a>
-                                        </div>
+                                    </div> -->
+                                    <div class="w-64 px-4 mb-5">
+                                      </div>
 
-                                        <div class="flex-1 text-center py-2 m-2">
-                                            <a href="#" class="mt-1 group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                                                <svg class="text-center h-7 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                                                    </path>
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
+                                    <button type="submit" class="bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-8 rounded-full mt-2">Post</button>
                                 </div>
 
-                                <div class="flex-1">
-                                    <button class="bg-blue-400 hover:bg-blue-500 mt-5 text-white font-bold py-2 px-8 rounded-full mr-8 float-right">
-                                        Tweet
-                                    </button>
-                                </div>
-                            </div>
+                                <hr class="border-gray-800 border-4">
+                            </form>
 
-                            <hr class="border-gray-800 border-4">
-                        </aside>
-                        
+                    
 
-                       <main class="h-full w-full bg-gray-50 flex items-center justify-center">
-                            <div class=" max-w-screen-md bg-grey-900 pt-11 pb-11 text-white">
-                            @foreach($tweets as $tweet)
-                                <div class="flex items-center justify-between">
-                                    <div class="gap-3.5 flex items-center">
-                                        @if ($tweet->user)
-                                                <div class="flex flex-col">
-                                            <b class="mb-2 capitalize">{{ $tweet->user->name }}</b>
-                                            <time datetime="{{ $tweet->created_at }}" class="text-gray-400 text-xs">
-                                                {{ $tweet->created_at->format('d F \a\t H:i A') }}
-                                            </time>
+
+                            <main class="h-full w-full  flex items-center justify-center">
+                                <div class="max-w-screen-md  text-white p-11">
+                                    @foreach($tweets as $tweet)
+                                    <div class="flex items-center justify-between mb-7">
+                                        <div class="flex items-center gap-3.5">
+                                            @if ($tweet->user)
+                                            <div class="flex flex-col">
+                                                <b class="mb-2 capitalize">{{ $tweet->user->name }}</b>
+                                                <time datetime="{{ $tweet->created_at }}" class="text-xs text-gray-400">
+                                                    {{ $tweet->created_at->format('d F \a\t H:i A') }}
+                                                </time>
+                                            </div>
+                                            @endif
                                         </div>
-                                        @endif
-                                    </div>
-                                    <div class="bg-gray-800 rounded-full h-3.5 flex items-center justify-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="34px" fill="#92929D">
-                                            <path d="M0 0h24v24H0V0z" fill="none" />
-                                            <path
-                                                d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="whitespace-pre-wrap text-white mb-9 mt-7">{{ $tweet->title }}</div>
-
-                                <div class=" h-16 border-b flex items-center justify-around">
-                                    <div class="flex items-center gap-3">
-                                        <svg width="20px" height="19px" viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M10.5139395,15.2840977 L6.06545155,18.6848361 C5.05870104,19.4544672 3.61004168,18.735539 3.60795568,17.4701239 L3.60413773,15.1540669 C1.53288019,14.6559967 0,12.7858138 0,10.5640427 L0,4.72005508 C0,2.11409332 2.10603901,0 4.70588235,0 L15.2941176,0 C17.893961,0 20,2.11409332 20,4.72005508 L20,10.5640427 C20,13.1700044 17.893961,15.2840977 15.2941176,15.2840977 L10.5139395,15.2840977 Z M5.60638935,16.5183044 L9.56815664,13.4896497 C9.74255213,13.3563295 9.955971,13.2840977 10.1754888,13.2840977 L15.2941176,13.2840977 C16.7876789,13.2840977 18,12.0671403 18,10.5640427 L18,4.72005508 C18,3.21695746 16.7876789,2 15.2941176,2 L4.70588235,2 C3.21232108,2 2,3.21695746 2,4.72005508 L2,10.5640427 C2,12.0388485 3.1690612,13.2429664 4.6301335,13.28306 C5.17089106,13.297899 5.60180952,13.7400748 5.60270128,14.2810352 L5.60638935,16.5183044 Z"
-                                                id="Path"></path>
-                                        </svg>
-                                        
-                                        <div class="flex items-center justify-between mt-4">
-                                            @foreach($tweets as $tweet)
-                                                     <div class="flex items-center justify-between bg-gray-50 h-11 w-11/12 px-4">
-                                                        <form method="POST" action="{{ route('comments.store', $tweet->id) }}">
-                                                            @csrf
-                                                            <input type="text" class="h-full w-full bg-black text-white text-center outline-none" placeholder="Write your comment..." name="comment">
-                                                        </form>
-                                                    </div>
-                                            @endforeach
+                                        <div class="bg-gray-800 rounded-full h-3.5 w-3.5 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#92929D">
+                                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                                <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                                            </svg>
                                         </div>
-
-
-
-
                                     </div>
-                                    <div class="flex items-center gap-3">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                        <div class="text-sm">{{ $tweet->likes->count() }} Likes</div>
+                                    <div class="whitespace-pre-wrap text-white text-left mb-5 mb-9 mt-7">{{ $user->name }}</div>
+                                    <div class="whitespace-pre-wrap text-white text-left ml-4 mb-9 mt-7">{{ $tweet->content }}</div>
+
+                                    <div class="h-16 border-b flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <svg width="20px" height="19px" viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M10.5139395,15.2840977 L6.06545155,18.6848361 C5.05870104,19.4544672 3.61004168,18.735539 3.60795568,17.4701239 L3.60413773,15.1540669 C1.53288019,14.6559967 0,12.7858138 0,10.5640427 L0,4.72005508 C0,2.11409332 2.10603901,0 4.70588235,0 L15.2941176,0 C17.893961,0 20,2.11409332 20,4.72005508 L20,10.5640427 C20,13.1700044 17.893961,15.2840977 15.2941176,15.2840977 L10.5139395,15.2840977 Z M5.60638935,16.5183044 L9.56815664,13.4896497 C9.74255213,13.3563295 9.955971,13.2840977 10.1754888,13.2840977 L15.2941176,13.2840977 C16.7876789,13.2840977 18,12.0671403 18,10.5640427 L18,4.72005508 C18,3.21695746 16.7876789,2 15.2941176,2 L4.70588235,2 C3.21232108,2 2,3.21695746 2,4.72005508 L2,10.5640427 C2,12.0388485 3.1690612,13.2429664 4.6301335,13.28306 C5.17089106,13.297899 5.60180952,13.7400748 5.60270128,14.2810352 L5.60638935,16.5183044 Z"
+                                                    id="Path"></path>
+                                            </svg>
+
+                                         
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                            <div class="text-sm">{{ $tweet->likes->count() }} Likes</div>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <svg width="22px" height="22px" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M4,0 C6.209139,0 8,1.790861 8,4 C8,4.1291298 7.99388117,4.25683047 7.98191762,4.38282788 L15.371607,7.98470389 C16.0745405,7.37145444 16.9938914,7 18,7 C20.209139,7 22,8.790861 22,11 C22,13.209139 20.209139,15 18,15 C16.9572434,15 16.0076801,14.6009919 15.2956607,13.9473263 L7.98384745,17.6380767 C7.99453877,17.7572882 8,17.8780063 8,18 C8,20.209139 6.209139,22 4,22 C1.790861,22 0,20.209139 0,18 C0,15.790861 1.790861,14 4,14 C5.37147453,14 6.58173814,14.690226 7.30236849,15.7422555 L14.2017356,12.2577203 C14.0708451,11.8622268 14,11.4393868 14,11 C14,10.5276126 14.0818865,10.0743509 14.2322392,9.65363512 L7.29274641,6.27172794 C6.57099412,7.31588608 5.36538874,8 4,8 C1.790861,8 0,6.209139 0,4 C0,1.790861 1.790861,0 4,0 Z M4,16 C2.8954305,16 2,16.8954305 2,18 C2,19.1045695 2.8954305,20 4,20 C5.1045695,20 6,19.1045695 6,18 C6,16.8954305 5.1045695,16 4,16 Z M18,9 C16.8954305,9 16,9.8954305 16,11 C16,12.1045695 16.8954305,13 18,13 C19.1045695,13 20,12.1045695 20,11 C20,9.8954305 19.1045695,9 18,9 Z M4,2 C2.8954305,2 2,2.8954305 2,4 C2,5.1045695 2.8954305,6 4,6 C5.1045695,6 6,5.1045695 6,4 C6,2.8954305 5.1045695,2 4,2 Z"
+                                                    id="Combined-Shape"></path>
+                                            </svg>
+                                            <div class="text-sm">Share</div>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <svg width="17px" height="22px" viewBox="0 0 17 22" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M2.85714286,-0.952380952 L12.1428571,-0.952380952 C14.246799,-0.952380952 15.952381,0.753200953 15.952381,2.85714286 L15.952381,18.2119141 C15.952381,19.263885 15.09959,20.116746 14.047619,20.116746 C13.6150601,20.116746 13.1953831,19.9694461 12.8576286,19.6992071 L7.5,15.4125421 L2.14237143,19.6992071 C1.32096217,20.3564207 0.122301512,20.2233138 -0.534912082,19.4019046 C-0.805151112,19.0641501 -0.952380952,18.644473 -0.952380952,18.2119141 L-0.952380952,2.85714286 C-0.952380952,0.753200953 0.753200953,-0.952380952 2.85714286,-0.952380952 Z M2.85714286,0.952380952 C1.80517191,0.952380952 0.952380952,1.80517191 0.952380952,2.85714286 L0.952380952,18.2119141 L6.31000952,13.9252491 C7.00569973,13.3686239 7.99430027,13.3686239 8.68999048,13.9252491 L14.047619,18.2119141 L14.047619,2.85714286 C14.047619,1.80517191 13.1948281,0.952380952 12.1428571,0.952380952 L2.85714286,0.952380952 Z"
+                                                    id="Rectangle-92"></path>
+                                            </svg>
+                                            <div class="text-sm">Saved</div>
+                                        </div>
+                                        <div class="flex items-center justify-between ml-10 mt-4 ">
+                                                <div class="bg-gray-50 h-11 px-6 w-11/12  flex items-center">
+                                                    <form method="POST" action="{{ route('comments.store', $tweet->id) }}">
+                                                        @csrf
+                                                        <input type="text" class="h-11 w-full px-11 bg-gray-800 text-white text-center outline-none"
+                                                            placeholder="Write your comment..." name="comment">
+                                                    </form>
+                                                </div>
+                                            </div>
                                     </div>
-                                    <div class="flex items-center gap-3">
-                                        <svg width="22px" height="22px" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M4,0 C6.209139,0 8,1.790861 8,4 C8,4.1291298 7.99388117,4.25683047 7.98191762,4.38282788 L15.371607,7.98470389 C16.0745405,7.37145444 16.9938914,7 18,7 C20.209139,7 22,8.790861 22,11 C22,13.209139 20.209139,15 18,15 C16.9572434,15 16.0076801,14.6009919 15.2956607,13.9473263 L7.98384745,17.6380767 C7.99453877,17.7572882 8,17.8780063 8,18 C8,20.209139 6.209139,22 4,22 C1.790861,22 0,20.209139 0,18 C0,15.790861 1.790861,14 4,14 C5.37147453,14 6.58173814,14.690226 7.30236849,15.7422555 L14.2017356,12.2577203 C14.0708451,11.8622268 14,11.4393868 14,11 C14,10.5276126 14.0818865,10.0743509 14.2322392,9.65363512 L7.29274641,6.27172794 C6.57099412,7.31588608 5.36538874,8 4,8 C1.790861,8 0,6.209139 0,4 C0,1.790861 1.790861,0 4,0 Z M4,16 C2.8954305,16 2,16.8954305 2,18 C2,19.1045695 2.8954305,20 4,20 C5.1045695,20 6,19.1045695 6,18 C6,16.8954305 5.1045695,16 4,16 Z M18,9 C16.8954305,9 16,9.8954305 16,11 C16,12.1045695 16.8954305,13 18,13 C19.1045695,13 20,12.1045695 20,11 C20,9.8954305 19.1045695,9 18,9 Z M4,2 C2.8954305,2 2,2.8954305 2,4 C2,5.1045695 2.8954305,6 4,6 C5.1045695,6 6,5.1045695 6,4 C6,2.8954305 5.1045695,2 4,2 Z"
-                                                id="Combined-Shape"></path>
-                                        </svg>
-                                        <div class="text-sm">Share</div>
-                                    </div>
-                                    <div class="flex items-center gap-3">
-                                        <svg width="17px" height="22px" viewBox="0 0 17 22" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M2.85714286,-0.952380952 L12.1428571,-0.952380952 C14.246799,-0.952380952 15.952381,0.753200953 15.952381,2.85714286 L15.952381,18.2119141 C15.952381,19.263885 15.09959,20.116746 14.047619,20.116746 C13.6150601,20.116746 13.1953831,19.9694461 12.8576286,19.6992071 L7.5,15.4125421 L2.14237143,19.6992071 C1.32096217,20.3564207 0.122301512,20.2233138 -0.534912082,19.4019046 C-0.805151112,19.0641501 -0.952380952,18.644473 -0.952380952,18.2119141 L-0.952380952,2.85714286 C-0.952380952,0.753200953 0.753200953,-0.952380952 2.85714286,-0.952380952 Z M2.85714286,0.952380952 C1.80517191,0.952380952 0.952380952,1.80517191 0.952380952,2.85714286 L0.952380952,18.2119141 L6.31000952,13.9252491 C7.00569973,13.3686239 7.99430027,13.3686239 8.68999048,13.9252491 L14.047619,18.2119141 L14.047619,2.85714286 C14.047619,1.80517191 13.1948281,0.952380952 12.1428571,0.952380952 L2.85714286,0.952380952 Z"
-                                                id="Rectangle-92"></path>
-                                        </svg>
-                                        <div class="text-sm">Saved</div>
-                                    </div>
+                                    
+                                    @endforeach
                                 </div>
-                                @endforeach
-                            </div>
-                        </main>
+                            </main>
+
 
 
 

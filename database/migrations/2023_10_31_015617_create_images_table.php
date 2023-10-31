@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddContentToTweets extends Migration
+class CreateImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class AddContentToTweets extends Migration
      */
     public function up()
     {
-        Schema::table('tweets', function (Blueprint $table) {
-            $table->text('content')->after('user_id');
+        Schema::create('images', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('tweet_id')->constrained();
+            $table->string('url');
+            $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      *
@@ -24,8 +28,6 @@ class AddContentToTweets extends Migration
      */
     public function down()
     {
-        Schema::table('tweets', function (Blueprint $table) {
-            $table->dropColumn('content');
-        });
+        Schema::dropIfExists('images');
     }
 }
