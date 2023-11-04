@@ -1,0 +1,53 @@
+
+
+
+.mybutton {
+          cursor: pointer;
+          font-family: "Roboto", sans-serif;
+          background-color: #404663;
+          color: #fff;
+          border: 0;
+          font-size:2rem;
+          font-weight: 400;
+          padding: 0.5em 1.25em;
+          border-radius:0.5em;
+          display: flex;
+          gap: 0.5em;
+          box-shadow: 
+          0px 1.7px 2.2px #00000005,
+          0px 4px 5.3px #00000007,
+          0px 7.5px 10px #00000009,
+          0px 13px 17.9px #00000009,
+          0px 25.1px 33.4px #00000009,
+          0px 60px 80px #00000009;
+          transition: transform 0.3s;
+
+}
+
+.mybutton:active {
+          transform: scale(1.05);
+}
+
+/* CSS for the popup container */
+.popup {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          border: 1px solid #ddd;
+          padding: 10px;
+          z-index: 1;
+      }
+      
+      .popup-button {
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+      }
+      

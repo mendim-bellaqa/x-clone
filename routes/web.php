@@ -28,6 +28,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/tweets/create', [TweetsController::class, 'create'])->name('tweets.create');
     Route::post('/tweets', [TweetsController::class, 'store'])->name('tweets.store');
+    Route::get('/tweets.edit', [TweetsController::class, 'edit'])->name('tweets.edit');
+    Route::get('/tweets.destroy', [TweetsController::class, 'destroy'])->name('tweets.destroy');
     Route::get('/tweets', [TweetsController::class, 'index'])->name('tweets.index');
     Route::post('/tweets/{tweet}/like', [LikeController::class, 'like'])->name('tweets.like');
     Route::delete('/tweets/{tweet}/unlike', [LikeController::class, 'unlike'])->name('tweets.unlike');
