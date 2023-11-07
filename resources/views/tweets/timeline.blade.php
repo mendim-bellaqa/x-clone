@@ -1,12 +1,12 @@
-@extends('layouts.app')
+<!-- tweets/timeline.blade.php -->
 
-@section('content')
-    <div class="container">
-        @foreach($tweets as $tweet)
-            <div class="tweet">
-                <p>{{ $tweet->content }}</p>
-                <p>Posted by {{ $tweet->user->name }}</p>
-            </div>
-        @endforeach
+@foreach($tweets as $tweet)
+    <div class="tweet">
+        <p>{{ $tweet->content }}</p>
+        @if ($tweet->user)
+            <p>Posted by {{ $tweet->user->name }}</p>
+        @endif
+
+        <!-- Add your like/unlike buttons here -->
     </div>
-@endsection
+@endforeach

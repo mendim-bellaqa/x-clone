@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LikeController;
-use App\Http\Controllers\TweetsController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\TweetsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +28,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/tweets/create', [TweetsController::class, 'create'])->name('tweets.create');
     Route::post('/tweets', [TweetsController::class, 'store'])->name('tweets.store');
-    Route::get('/tweets.edit', [TweetsController::class, 'edit'])->name('tweets.edit');
-    Route::get('/tweets.destroy', [TweetsController::class, 'destroy'])->name('tweets.destroy');
+
+
     Route::get('/tweets', [TweetsController::class, 'index'])->name('tweets.index');
     Route::post('/tweets/{tweet}/like', [LikeController::class, 'like'])->name('tweets.like');
     Route::delete('/tweets/{tweet}/unlike', [LikeController::class, 'unlike'])->name('tweets.unlike');
@@ -42,4 +42,19 @@ Route::get('/', function () {
 });
 // Define a named route for the base route
 Route::get('/', [HomeController::class, 'index'])->name('base');
+
+
+
+Route::get('/tweets/{tweet}/edit', [TweetsController::class, 'edit'])->name('tweets.edit');
+Route::put('/tweets/{tweet}', [TweetsController::class, 'update'])->name('tweets.update');
+Route::delete('/tweets/{tweet}', [TweetsController::class, 'destroy'])->name('tweets.destroy');
+Route::put('/tweets/{tweet}', [TweetsController::class, 'update'])->name('tweets.update');
+
+
+
+
+
+// Route::get('/tweets/{tweet}/edit', 'TweetController@edit')->name('tweets.edit');
+// Route::put('/tweets/{tweet}', 'TweetController@update')->name('tweets.update');
+// Route::delete('/tweets/{tweet}', 'TweetController@destroy')->name('tweets.destroy');
 

@@ -43,113 +43,108 @@
         <!-- component -->
         <div class="p-relative h-screen" style="background-color: #15202b">
             <div class="flex justify-center">
-            <header class="text-white h-12 py-4 h-auto">
+                <header class="text-white h-12 py-4 h-auto">
+                    <!-- Navbar (left side) -->
+                    <div style="width: 275px;">
+                        <div class="overflow-y-auto fixed h-screen pr-3" style="width: 275px;">
+                            <!--Logo-->
+                            <svg viewBox="0 0 24 24" class="h-8 w-8 text-white ml-3" fill="currentColor">
+                                <g>
+                                    <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z">
+                                    </path>
+                                </g>
+                            </svg>
+                            <!-- Nav-->
+                            <nav class="mt-5 px-2">
+                                
+                                <a href="/" class="group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full bg-gray-800 text-blue-300">
+                                    <svg class="mr-4 h-6 w-6 " stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"></path>
+                                    </svg>
+                                    Home
+                                </a>
+                                <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full hover:bg-gray-800 hover:text-blue-300">
+                                    <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path>
+                                    </svg>
 
-            <!-- Navbar (left side) -->
-            <div style="width: 275px;">
-            <div class="overflow-y-auto fixed h-screen pr-3" style="width: 275px;">
-
-                <!--Logo-->
-                <svg viewBox="0 0 24 24" class="h-8 w-8 text-white ml-3" fill="currentColor">
-                    <g>
-                        <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z">
-                        </path>
-                    </g>
-                </svg>
-
-                <!-- Nav-->
-                <nav class="mt-5 px-2">
-                    
-                    <a href="/" class="group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full bg-gray-800 text-blue-300">
-                        <svg class="mr-4 h-6 w-6 " stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"></path>
-                        </svg>
-                        Home
-                    </a>
-                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full hover:bg-gray-800 hover:text-blue-300">
-                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path>
-                        </svg>
-
-                        Explore
-                    </a>
-                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
-                            </path>
-                        </svg>
-                        Notifications
-                    </a>
-                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                            </path>
-                        </svg>
-                        Messages
-                    </a>
-                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
-                        </svg>
-                        Bookmarks
-                    </a>
-                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
-                            </path>
-                        </svg>
-                        Lists
-                    </a>
-                    <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                        </svg>
-                        Profile
-                    </a>
-                    <a href="/tweets/more" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                        <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        More
-                    </a>
-                    <a href="/tweets/create">
-                    <button class="bg-blue-400 hover:bg-blue-500 w-full mt-5 text-white font-bold py-2 px-4 rounded-full">
-                        Tweet
-                    </button>
-                    </a>
-                </nav>
-
-                <div id="app">
-                    <my-vue-component></my-vue-component>
-                </div>
-
-                <!-- User Menu -->
-                <div class="absolute" style="bottom: 2rem;">
-                    <div class="flex-shrink-0 flex hover:bg-gray-800 rounded-full px-4 py-3 mt-12 mr-2">
-                        <a href="/" class="flex-shrink-0 group block">
-                            <div class="flex items-center">
-                                <div>
-                                    <img class="inline-block h-10 w-10 rounded-full" src="https://img.freepik.com/free-vector/hand-drawn-side-profile-cartoon-illustration_23-2150517168.jpg?w=740&t=st=1698539186~exp=1698539786~hmac=44d4048cc4620bdba36a6ab6ea6c11acc143e039c6b7610b1112c5da0621ef17" alt="">
-                                </div>
-                                <div class="ml-3">
-                                @if (Auth::check()) 
-                                    <p class="text-base leading-6 font-medium text-white">
-                                    {{ $user->name }}
-                                    </p>
-                                    <p class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                                    {{ $user->email }}
-                                    </p>
-                                @else
-                                <a href="/login">Log In</a>
-                                @endif
-                                </div>
+                                    Explore
+                                </a>
+                                <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
+                                    <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                                        </path>
+                                    </svg>
+                                    Notifications
+                                </a>
+                                <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
+                                    <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                    Messages
+                                </a>
+                                <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
+                                    <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+                                    </svg>
+                                    Bookmarks
+                                </a>
+                                <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
+                                    <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
+                                        </path>
+                                    </svg>
+                                    Lists
+                                </a>
+                                <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
+                                    <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                    </svg>
+                                    Profile
+                                </a>
+                                <a href="/tweets/more" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
+                                    <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    More
+                                </a>
+                                <a href="/tweets/create">
+                                <button class="bg-blue-400 hover:bg-blue-500 w-full mt-5 text-white font-bold py-2 px-4 rounded-full">
+                                    Tweet
+                                </button>
+                                </a>
+                            </nav>
+                            <div id="app">
+                                <my-vue-component></my-vue-component>
                             </div>
-                        </a>
-                    </div>
-                </div>
+                            <!-- User Menu -->
+                            <div class="absolute" style="bottom: 2rem;">
+                                <div class="flex-shrink-0 flex hover:bg-gray-800 rounded-full px-4 py-3 mt-12 mr-2">
+                                    <a href="/" class="flex-shrink-0 group block">
+                                        <div class="flex items-center">
+                                            <div>
+                                                <img class="inline-block h-10 w-10 rounded-full" src="https://img.freepik.com/free-vector/hand-drawn-side-profile-cartoon-illustration_23-2150517168.jpg?w=740&t=st=1698539186~exp=1698539786~hmac=44d4048cc4620bdba36a6ab6ea6c11acc143e039c6b7610b1112c5da0621ef17" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                            @if (Auth::check()) 
+                                                <p class="text-base leading-6 font-medium text-white">
+                                                {{ $user->name }}
+                                                </p>
+                                                <p class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
+                                                {{ $user->email }}
+                                                </p>
+                                            @else
+                                            <a href="/login">Log In</a>
+                                            @endif
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </header>
+                    </div>
+            </header>
 
                     <main role="main">
 
@@ -178,9 +173,7 @@
                                     </a>
                                 </div>
                             </div>
-
-                           
-
+                            
                             <form method="POST" action="{{ route('tweets.store') }}" enctype="multipart/form-data" class="shadow-md rounded px-8 pt-6 pb-8 mb-4">
                                 @csrf
 
@@ -192,9 +185,6 @@
                                         <input type="text" id="content" name="content" class="bg-transparent text-gray-400 font-medium text-lg w-full focus:outline-none focus:shadow-outline" placeholder="What's happening?" id="tweet_content">
                                     </div>
                                 </div>
-
-                             
-                                
                                 
                                 <div class="flex items-center justify-between mb-5">
                                      <div class="flex-1 text-center px-1 py-1 m-2 relative">
@@ -230,20 +220,20 @@
                                 <hr class="border-gray-800 border-4">
                             </form>
 
-                
-
                             <div id="app">
                                 <tweets-component></tweets-component>
                             </div>
-
+                            
+                            <main class="flex justify-center">
 
                             
 
 
-                            <main class="flex justify-center">
                                 <div class="text-white">
                                     @foreach($tweets as $tweet)
                                     <div class="flex items-center mt-5 mb-7 tweet-container">
+                               
+                                    
                                         <div class="flex gap-3.5">
                                             @if ($tweet->user)
                                             <div class="flex flex-col">
@@ -255,26 +245,42 @@
                                             @endif
                                         </div>
                                         <div class="bg-gray-800 rounded-full h-3.5 w-3.5 flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
-                                                fill="#92929D" class="open-popup">
-                                                <path d="M0 0h24v24H0V0z" fill="none" />
-                                                <path
-                                                    d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
-                                            </svg>
-                                            <!-- Popup container -->
+                                            
+                                           
+
+
                                             <div class="popup">
-                                                <button class="popup-button edit-button">Edit</button>
-                                                <button class="popup-button delete-button">Delete</button>
+                                                <div class="flex col ml-5">
+                                                <a href="{{ route('tweets.edit', ['tweet' => $tweet]) }}" class="text-sm font-medium bg-gray-800 py-1 px-2 rounded text-white align-middle">Edit Tweet</a>
+                                                <form method="POST" action="{{ route('tweets.destroy', ['tweet' => $tweet]) }}" class="ml-5">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="text-sm font-medium bg-gray-900 py-1 px-2 rounded text-white align-middle">Delete</button>
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
+                                        @if (session('success') && session('tweet_id') == $tweet->id)
+                                        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative ml-10 mb-5 mt-5" role="alert">
+                                            <strong class="font-bold">Success!</strong>
+                                            <span class="block sm:inline">{{ session('success') }}</span>
+                                            <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="text-green-400" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M14.293 5.293a1 1 0 00-1.414 0L10 8.586 7.707 6.293a1 1 0 00-1.414 1.414L8.586 10l-2.293 2.293a1 1 0 001.414 1.414L10 11.414l2.293 2.293a1 1 0 001.414-1.414L11.414 10l2.293-2.293a1 1 0 000-1.414z" clip-rule="evenodd"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    @endif
                                     </div>
+                                  
+                                    @if(auth()->check())
                                     <div class="whitespace-pre-wrap text-white text-right mb-5 mb-9 ml-10 mt-7">{{ $user->name }}</div>
                                     <time datetime="{{ $tweet->created_at }}" class="text-xs text-gray-400">
                                         {{ $tweet->created_at->format('d F \a\t H:i A') }}
                                     </time>
                                     <div class="whitespace-pre-wrap text-white p-11 text-left ml-4 mb-9 mt-7">{{ $tweet->content }}</div>
                                     
-                                        @if ($tweet->image) <!-- Check if the tweet has an image -->
+                                        @if ($tweet->image)
                                             <img src="{{ asset($tweet->image) }}" alt="Tweet Image" class="mb-3 w-full">
                                         @endif
                                     <div class="h-16 border-b flex items-center justify-between">
@@ -306,31 +312,26 @@
                                             </svg>
                                             <div class="text-sm">Saved</div>
                                         </div>
-                                  
-
+                                        @endif
                                     </div>
                                     
                                     @endforeach
                                 </div>
                             </main>
-
-                            
-                                        <!-- <div class="flex items-center justify-between ml-10 mt-4">
-                                            <div class="bg-gray-50 h-11 w-11/12 flex items-center rounded-full">
-                                                <form method="POST" action="{{ route('comments.store', $tweet->id) }}">
-                                                    @csrf
-                                                    <div class="flex items-center space-x-2 text-gray-700">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3-3m0 0l-3 3m3-3h12m5 8v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2z"></path>
-                                                        </svg>
-                                                    </div>
-                                                    <input type="text" class="h-11 w-full bg-gray-100 text-gray-700 text-center outline-none rounded-full focus:bg-white"
-                                                        placeholder="Add a comment..." name="comment">
-                                                </form>
-                                            </div>
-                                        </div> -->
-
-
+                            <!-- <div class="flex items-center justify-between ml-10 mt-4">
+                                <div class="bg-gray-50 h-11 w-11/12 flex items-center rounded-full">
+                                    <form method="POST" action="{{ route('comments.store', $tweet->id) }}">
+                                        @csrf
+                                        <div class="flex items-center space-x-2 text-gray-700">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3-3m0 0l-3 3m3-3h12m5 8v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2z"></path>
+                                            </svg>
+                                        </div>
+                                        <input type="text" class="h-11 w-full bg-gray-100 text-gray-700 text-center outline-none rounded-full focus:bg-white"
+                                            placeholder="Add a comment..." name="comment">
+                                    </form>
+                                </div>
+                            </div> -->
                     </section>
 
 
@@ -521,11 +522,7 @@
 
                                 </div>
                             </div>
-
                             <hr class="border-gray-800">
-
-
-
                             <!--show more-->
 
                             <div class="flex">
@@ -533,13 +530,8 @@
                                     <h2 class="px-4 ml-2 w-48 font-bold text-blue-400">Show more</h2>
                                 </div>
                             </div>
-
                         </div>
-
-
-
-
-                                <div class="flow-root m-6 inline">
+                        <div class="flow-root m-6 inline">
                                     <div class="flex-1">
                                         <a href="#">
                                             <p class="text-sm leading-6 font-medium text-gray-500">Terms Privacy Policy Cookies Imprint Ads info
@@ -559,80 +551,34 @@
         </div>
 
     </div>
-        <style>
-            .overflow-y-auto::-webkit-scrollbar, .overflow-y-scroll::-webkit-scrollbar, .overflow-x-auto::-webkit-scrollbar, .overflow-x::-webkit-scrollbar, .overflow-x-scroll::-webkit-scrollbar, .overflow-y::-webkit-scrollbar, body::-webkit-scrollbar {
-            display: none;
-            }
 
-            /* Hide scrollbar for IE, Edge and Firefox */
-            .overflow-y-auto, .overflow-y-scroll, .overflow-x-auto, .overflow-x, .overflow-x-scroll, .overflow-y, body {
-            -ms-overflow-style: none;
-            /* IE and Edge */
-            scrollbar-width: none;
-            /* Firefox */
-            }
+    <style>
+        .overflow-y-auto::-webkit-scrollbar, .overflow-y-scroll::-webkit-scrollbar, .overflow-x-auto::-webkit-scrollbar, .overflow-x::-webkit-scrollbar, .overflow-x-scroll::-webkit-scrollbar, .overflow-y::-webkit-scrollbar, body::-webkit-scrollbar {
+        display: none;
+        }
 
-            .bg-dim-700 {
-            --bg-opacity: 1;
-            background-color: #192734;
-            }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .overflow-y-auto, .overflow-y-scroll, .overflow-x-auto, .overflow-x, .overflow-x-scroll, .overflow-y, body {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+        }
 
-            html, body {
-            margin: 0;
-            background-color: #15202b;
-            }
+        .bg-dim-700 {
+        --bg-opacity: 1;
+        background-color: #192734;
+        }
 
-            svg.paint-icon {
-            fill: currentcolor;
-            }
-        </style>
-        <script>
-       // Initially hide the edit and delete buttons
-                const popups = document.querySelectorAll('.popup');
-                popups.forEach((popup) => {
-                    popup.style.display = 'none';
-                });
+        html, body {
+        margin: 0;
+        background-color: #15202b;
+        }
 
-                // Add event listener for all "open-popup" elements (tweets)
-                const openPopups = document.querySelectorAll('.open-popup');
+        svg.paint-icon {
+        fill: currentcolor;
+        }
+    </style>
 
-                openPopups.forEach((openPopupButton, index) => {
-                    openPopupButton.addEventListener('click', function () {
-                        const popup = this.parentElement.querySelector('.popup');
-                        if (popup.style.display === 'none' || popup.style.display === '') {
-                            popup.style.display = 'block';
-                        } else {
-                            popup.style.display = 'none';
-                        }
-
-                        // Add event listeners for the edit and delete buttons within the popup
-                        const editButton = popup.querySelector('.edit-button');
-                        editButton.addEventListener('click', function () {
-                            // Handle the edit button click for the specific tweet (use 'index' to identify the tweet)
-                            // You can set the edit URL dynamically
-                            window.location.href = '{{ route("tweets.edit", ['id' => $tweet->id]) }}';
-                        });
-
-                        const deleteButton = popup.querySelector('.delete-button');
-                        deleteButton.addEventListener('click', function () {
-                            // Handle the delete button click for the specific tweet (use 'index' to identify the tweet)
-                            // You can set the delete URL dynamically and send an AJAX request to delete the tweet
-                            // For example:
-                            // window.location.href = '{{ route("tweets.destroy", ['id' => $tweet->id]) }}';
-                        });
-                    });
-                });
-
-                // Close the popup if the user clicks outside of it
-                window.onclick = function (event) {
-                    const popups = document.querySelectorAll('.popup');
-                    popups.forEach((popup) => {
-                        if (event.target !== popup) {
-                            popup.style.display = 'none';
-                        }
-                    });
-                };
-
-        </script>
     </body>
 </html>
