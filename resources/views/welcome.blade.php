@@ -232,24 +232,8 @@
                                 <div class="text-white">
                                     @foreach($tweets as $tweet)
                                     <div class="flex items-center mt-5 mb-7 tweet-container">
-                               
-                                    
-                                        <div class="flex gap-3.5">
-                                            @if ($tweet->user)
-                                            <div class="flex flex-col">
-                                                <b class="mb-2 capitalize text-left">{{ $tweet->user->name }}</b>
-                                                <time datetime="{{ $tweet->created_at }}" class="text-xs text-gray-400">
-                                                    {{ $tweet->created_at->format('d F \a\t H:i A') }}
-                                                </time>
-                                            </div>
-                                            @endif
-                                        </div>
-                                        <div class="bg-gray-800 rounded-full h-3.5 w-3.5 flex items-center justify-center">
-                                            
-                                           
-
-
-                                            <div class="popup">
+                                        <div >
+                                             <div>
                                                 <div class="flex col ml-5">
                                                 <a href="{{ route('tweets.edit', ['tweet' => $tweet]) }}" class="text-sm font-medium bg-gray-800 py-1 px-2 rounded text-white align-middle">Edit Tweet</a>
                                                 <form method="POST" action="{{ route('tweets.destroy', ['tweet' => $tweet]) }}" class="ml-5">
@@ -276,17 +260,25 @@
                                     </div>
                                   
                                     @if(auth()->check())
-                                    <div class="whitespace-pre-wrap text-white text-right mb-5 mb-9 ml-10 mt-7">{{ $user->name }}</div>
-                                    <time datetime="{{ $tweet->created_at }}" class="text-xs text-gray-400">
-                                        {{ $tweet->created_at->format('d F \a\t H:i A') }}
-                                    </time>
-                                    <div class="whitespace-pre-wrap text-white p-11 text-left ml-4 mb-9 mt-7">{{ $tweet->content }}</div>
+                                    <div class="flex col ml-5">
+                                     
+                                            <div class=" text-white text-right mt-3 ">{{ $user->name }}</div>
+                                         
+                                    </div>
+
+                                        <time datetime="{{ $tweet->created_at }}" class=" text-gray-400 ml-5">
+
+                                            {{ $tweet->created_at->format('d F \a\t H:i A') }}
+                                        </time>
+                                        
+                                    <div class=" text-white p-11 text-left ml-5 mb-5 ">{{ $tweet->content }}</div>
                                     
                                       <!-- Image display -->
                                         @if ($tweet->images->count() > 0)
                                             @foreach($tweet->images as $image)
-                                            <img src="{{ asset('storage/' . $image->url) }}" alt="Tweet Image" class="mb-3 w-full">
-
+                                                <div class="w-full mr-10">
+                                                    <img src="{{ asset('storage/' . $image->url) }}" alt="Tweet Image" class="mt-5 mb-5 ">
+                                                </div>
                                             @endforeach
                                         @endif
 
