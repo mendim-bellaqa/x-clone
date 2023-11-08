@@ -100,8 +100,7 @@ class TweetsController extends Controller
 
     public function index()
     {
-        // Retrieve all tweets from the database
-        $tweets = Tweet::latest()->get(); // Use the correct namespace 'App\Models\Tweet'
+        $tweets = Tweet::with('images')->latest()->get();
     
         return view('tweets.index', compact('tweets'));
     }

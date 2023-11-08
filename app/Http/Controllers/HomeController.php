@@ -31,7 +31,7 @@ class HomeController extends Controller
          $user = auth()->user();
      
          // Retrieve all tweets from the database, ordered by created_at in descending order
-         $tweets = Tweet::latest()->get();
+         $tweets = Tweet::with('images')->latest()->get();
      
          // Pass the $tweets and $user variables to the view
          return view('welcome', ['tweets' => $tweets, 'user' => $user]);
