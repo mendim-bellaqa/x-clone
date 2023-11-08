@@ -261,16 +261,18 @@
                                             </div>
                                         </div>
                                         @if (session('success') && session('tweet_id') == $tweet->id)
-                                        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative ml-10 mb-5 mt-5" role="alert">
-                                            <strong class="font-bold">Success!</strong>
-                                            <span class="block sm:inline">{{ session('success') }}</span>
-                                            <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="text-green-400" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd" d="M14.293 5.293a1 1 0 00-1.414 0L10 8.586 7.707 6.293a1 1 0 00-1.414 1.414L8.586 10l-2.293 2.293a1 1 0 001.414 1.414L10 11.414l2.293 2.293a1 1 0 001.414-1.414L11.414 10l2.293-2.293a1 1 0 000-1.414z" clip-rule="evenodd"></path>
-                                                </svg>
-                                            </span>
-                                        </div>
-                                    @endif
+                                            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative ml-10 mb-5 mt-5 success-message" role="alert">
+                                                <strong class="font-bold">Success!</strong>
+                                                <span class="block sm:inline">{{ session('success') }}</span>
+                                                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="text-green-400" viewBox="0 0 20 20">
+                                                        <path fill-rule="evenodd" d="M14.293 5.293a1 1 0 00-1.414 0L10 8.586 7.707 6.293a1 1 0 00-1.414 1.414L8.586 10l-2.293 2.293a1 1 0 001.414 1.414L10 11.414l2.293 2.293a1 1 0 001.414-1.414L11.414 10l2.293-2.293a1 1 0 000-1.414z" clip-rule="evenodd"></path>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                        @endif
+
+                                   
                                     </div>
                                   
                                     @if(auth()->check())
@@ -579,6 +581,27 @@
         fill: currentcolor;
         }
     </style>
+    <script>
+    // Wait for the document to be fully loaded
+    document.addEventListener('DOMContentLoaded', function () {
+        // Select the success message div
+        const successMessage = document.querySelector('.success-message');
+        
+        // Check if the success message div exists
+        if (successMessage) {
+            // Delay before showing the message (1 second = 1000 milliseconds)
+            setTimeout(function () {
+                successMessage.style.display = 'block';
+                
+                // Delay before hiding the message (3 seconds = 3000 milliseconds)
+                setTimeout(function () {
+                    successMessage.style.display = 'none';
+                }, 3000);
+            }, 1000);
+        }
+    });
+</script>
+
 
     </body>
 </html>
