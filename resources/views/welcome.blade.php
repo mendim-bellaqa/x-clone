@@ -284,15 +284,17 @@
 
                                     <div class="h-16 border-b flex items-center justify-between">
                                         
-                                        <div class="flex items-center gap-3">
-
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fill-rule="evenodd"d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                                    clip-rule="evenodd" />
+                                    <div class="flex items-center gap-3">
+                                        <!-- Like Button -->
+                                        <button 
+                                            class="flex items-center text-sm text-gray-600 hover:text-red-500 focus:outline-none"
+                                            onclick="likeTweet('{{ route('tweets.like', ['tweet' => $tweet]) }}')"
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h14"></path>
                                             </svg>
-
-                                            <div class="text-sm">{{ $tweet->likes->count() }} Likes</div>
-
+                                            <span id="like-count-{{ $tweet->id }}" class="ml-1">{{ $tweet->likes->count() }}</span>
+                                        </button>
                                         </div>
 
                                         <div id="app">
@@ -588,6 +590,20 @@
             }, 1000);
         }
     });
+    function likeTweet(route) {
+        // Make an AJAX request to like the tweet
+        axios.post(route)
+            .then(response => {
+                // Update the like count on the page
+                const likeCountElement = document.getElementById('like-count-' + response.data.tweet_id);
+                if (likeCountElement) {
+                    likeCountElement.innerText = response.data.likesCount;
+                }
+            })
+            .catch(error => {
+                console.error('Error liking tweet:', error);
+            });
+    }
 </script>
 
 
