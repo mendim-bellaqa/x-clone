@@ -9,6 +9,15 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js"></script>
+        <!-- Add these lines to include lightGallery CSS and JS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lg-thumbnail.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lg-fullscreen.min.js"></script>
+
+
         <!-- Styles -->
         <link href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css" rel="stylesheet">
         <style>
@@ -231,8 +240,8 @@
 
                                 <div class="text-white">
                                     @foreach($tweets as $tweet)
-                                    <div class="flex items-center mt-5 mb-7 tweet-container">
-                                        <div >
+                                    <div class="items-center mt-5 mb-7 tweet-container">
+                                        <div>
                                              <div>
                                                 <div class="flex col ml-5">
                                                 <a href="{{ route('tweets.edit', ['tweet' => $tweet]) }}" class="text-sm font-medium bg-gray-800 py-1 px-2 rounded text-white align-middle">Edit Tweet</a>
@@ -273,13 +282,15 @@
                                         
                                     <div class=" text-white p-11 text-left ml-5 mb-5 ">{{ $tweet->content }}</div>
                                     
-                                      <!-- Image display -->
+                                     <!-- Image display -->
                                         @if ($tweet->images->count() > 0)
-                                            @foreach($tweet->images as $image)
-                                                <div class="w-full mr-10">
-                                                    <img src="{{ asset('storage/' . $image->url) }}" alt="Tweet Image" class="mt-5 mb-5 ">
-                                                </div>
-                                            @endforeach
+                                            <div class="lg-container">
+                                                @foreach($tweet->images as $image)
+                                                    <a href="{{ asset('storage/' . $image->url) }}" data-lg-size="1200-800">
+                                                        <img src="{{ asset('storage/' . $image->url) }}" alt="Tweet Image" class="tweet-image">
+                                                    </a>
+                                                @endforeach
+                                            </div>
                                         @endif
 
                                     <div class="h-16 border-b flex items-center justify-between">
@@ -571,6 +582,50 @@
         fill: currentcolor;
         }
     </style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tweetContainers = document.querySelectorAll('.tweet-container');
+
+        tweetContainers.forEach((container, index) => {
+            const lgContainer = container.querySelector('.lg-container');
+            const tweetImages = container.querySelectorAll('.tweet-image');
+
+            if (lgContainer) {
+                lightGallery(lgContainer, {
+                    selector: '.tweet-image',
+                    counter: false,
+                    download: false,
+                    thumbnail: true,
+                    plugins: [lgZoom, lgThumbnail, lgFullscreen],
+                });
+
+                lgContainer.addEventListener('onAfterSlide.lg', function (event) {
+                    const currentIndex = event.detail.index;
+                    // Implement logic to navigate to the next or previous tweet based on the currentIndex
+                    // For example, you can show/hide tweets based on the index using JavaScript or Laravel routes.
+                });
+
+                // Prevent default swipe gestures on the tweet container to avoid conflicts with lightGallery
+                let touchStartX = 0;
+
+                container.addEventListener('touchstart', function (e) {
+                    touchStartX = e.touches[0].clientX;
+                });
+
+                container.addEventListener('touchmove', function (e) {
+                    const touchEndX = e.touches[0].clientX;
+                    const swipeDistance = touchEndX - touchStartX;
+
+                    if (Math.abs(swipeDistance) > 50) {
+                        e.preventDefault();
+                    }
+                });
+            }
+        });
+    });
+</script>
+
+</script>
     <script>
     // Wait for the document to be fully loaded
     document.addEventListener('DOMContentLoaded', function () {
