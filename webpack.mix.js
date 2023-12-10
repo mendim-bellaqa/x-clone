@@ -10,6 +10,7 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+
  mix.js('resources/js/vueapp.js', 'public/js')
  .vue()
  .version()

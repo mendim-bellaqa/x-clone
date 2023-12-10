@@ -20,9 +20,11 @@ class Tweet extends Model
     }
 
     public function likes()
-    {
-        return $this->belongsToMany(User::class, 'likes', 'tweet_id', 'user_id');
-    }
+{
+    return $this->hasMany(Like::class);
+}
+
+  
 
     public function images()
     {

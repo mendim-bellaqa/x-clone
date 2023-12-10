@@ -16,7 +16,7 @@
         <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lg-thumbnail.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lg-fullscreen.min.js"></script>
-
+        <script src="{{ mix('js/app.js') }}"></script>
 
         <!-- Styles -->
         <link href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css" rel="stylesheet">
@@ -26,6 +26,7 @@
 
 
             <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+            
 
         <style>
             body {
@@ -34,6 +35,7 @@
         </style>
     </head>
     <body class="antialiased">
+        
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -297,13 +299,13 @@
                                         
                                     <div class="flex items-center gap-3">
                                         <!-- Like Button -->
+
+                                        <button > Likes</button>
+
                                         <button 
-                                            class="flex items-center text-sm text-gray-600 hover:text-red-500 focus:outline-none"
-                                            onclick="likeTweet('{{ route('tweets.like', ['tweet' => $tweet]) }}')"
-                                        >
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h14"></path>
-                                            </svg>
+                                            class="text-orange-500 bg-transparent border border-solid border-orange-500 hover:bg-orange-500 hover:text-white active:bg-orange-600 font-bold uppercase text-xs px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+                                             Likes</button>
+                                    
                                             <span id="like-count-{{ $tweet->id }}" class="ml-1">{{ $tweet->likes->count() }}</span>
                                         </button>
                                         </div>
@@ -582,6 +584,23 @@
         fill: currentcolor;
         }
     </style>
+
+<script>
+export default {
+  data() {
+    return {
+      liked: false,
+      likeCount: 0,
+    };
+  },
+  methods: {
+    toggleLike() {
+      // Implement logic to send requests to Laravel backend to like/unlike the post
+      // Update this.liked and this.likeCount accordingly
+    },
+  },
+};
+</script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const tweetContainers = document.querySelectorAll('.tweet-container');
@@ -626,40 +645,7 @@
 </script>
 
 </script>
-    <script>
-    // Wait for the document to be fully loaded
-    document.addEventListener('DOMContentLoaded', function () {
-        // Select the success message div
-        const successMessage = document.querySelector('.success-message');
-        
-        // Check if the success message div exists
-        if (successMessage) {
-            // Delay before showing the message (1 second = 1000 milliseconds)
-            setTimeout(function () {
-                successMessage.style.display = 'block';
-                
-                // Delay before hiding the message (3 seconds = 3000 milliseconds)
-                setTimeout(function () {
-                    successMessage.style.display = 'none';
-                }, 3000);
-            }, 1000);
-        }
-    });
-    function likeTweet(route) {
-        // Make an AJAX request to like the tweet
-        axios.post(route)
-            .then(response => {
-                // Update the like count on the page
-                const likeCountElement = document.getElementById('like-count-' + response.data.tweet_id);
-                if (likeCountElement) {
-                    likeCountElement.innerText = response.data.likesCount;
-                }
-            })
-            .catch(error => {
-                console.error('Error liking tweet:', error);
-            });
-    }
-</script>
+  
 
 
     </body>

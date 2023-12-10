@@ -14,11 +14,12 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     {{ __('Hello X You are logged in!') }}  
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="{{ mix('js/vueapp.js') }}"></script>
+
 @endsection

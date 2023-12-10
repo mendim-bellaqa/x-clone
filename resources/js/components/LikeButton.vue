@@ -19,7 +19,7 @@ export default {
             if (!this.liked) {
                 // Perform a request to "like" the tweet
                 // You can use Axios or another library to make the request.
-                // For simplicity, we'll just toggle the like state.
+                // For simplicity, we'll just toggle the like state.    
                 this.liked = !this.liked;
             } else {
                 // Handle "unliking" here
