@@ -7,65 +7,80 @@
     <link href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-black text-white antialiased">
-    <div class="container mx-auto">
-        <div class="flex justify-center items-center h-screen">
-            <div class="w-full max-w-md">
-                <div class="bg-black rounded-lg shadow p-8">
-                    <div class="text-2xl font-semibold text-center mb-4">{{ __('Login') }}</div>
+    <div class="relative flex h-full w-full">
+        <div class="h-screen w-1/2 bg-black">
+            <div class="mx-auto flex h-full w-2/3 flex-col justify-center text-white xl:w-1/2">
+                <div>
+                    <p class="text-2xl">Login|</p>
+                    <p>please login to continue|</p>
+                </div>
+                <div class="my-6">
+                    <!-- Replace with your Google sign-in button if needed -->
+                    <button class="flex w-full justify-center rounded-3xl border-none bg-white p-1 text-black hover:bg-gray-200 sm:p-2">
+                        <img src="https://freesvg.org/img/1534129544.png" class="mr-2 w-6 object-fill" />Sign in with Google
+                    </button>
+                </div>
+                <div>
+                    <fieldset class="border-t border-solid border-gray-600">
+                        <legend class="mx-auto px-2 text-center text-sm">Or login via our secure system</legend>
+                    </fieldset>
+                </div>
+                <div class="mt-10">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="mb-4">
-                            <label for="email" class="block  text-sm font-medium mb-2">
-                                {{ __('Email Address') }}
-                            </label>
+                            <label for="email" class="mb-5 block font-extrabold">Email</label>
                             <input
-                                id="email"
                                 type="email"
-                                class="form-input block w-full border-2 @error('email') border-red-500 @enderror"
+                                id="email"
+                                class="inline-block w-full rounded-full bg-white p-3 text-center leading-none text-black placeholder-indigo-900 shadow placeholder:opacity-30"
                                 name="email"
                                 value="{{ old('email') }}"
                                 required
                                 autocomplete="email"
-                            >
+                                placeholder="mail@user.com"
+                            />
                             @error('email')
                                 <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
                             @enderror
                         </div>
 
-                        <div class="mb-4">
-                            <label for="password" class="block  text-sm font-medium mb-2">
-                                {{ __('Password') }}
-                            </label>
+                        <div class="mt-4">
+                            <label for="password" class="mb-5 block font-extrabold">Password</label>
                             <input
-                                id="password"
                                 type="password"
-                                class="form-input block w-full border-2 @error('password') border-red-500 @enderror"
+                                id="password"
+                                class="inline-block w-full rounded-full bg-white p-3 text-center leading-none text-black placeholder-indigo-900 shadow placeholder:opacity-30"
                                 name="password"
                                 required
                                 autocomplete="current-password"
-                            >
+                            />
                             @error('password')
                                 <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
                             @enderror
                         </div>
 
-                        <div class="mb-4">
-                            <button type="submit" class="bg-blue-500 text-white p-2 rounded w-full hover:bg-blue-700">
-                                {{ __('Login') }}
-                            </button>
+                        <div class="mt-4 flex w-full flex-col justify-between sm:flex-row">
+                            <!-- Remember me -->
+                            <div>
+                                <input type="checkbox" id="remember" />
+                                <label for="remember" class="mx-2 text-sm">Remember me</label>
+                            </div>
+                            <!-- Forgot password -->
+                            <div>
+                                <a href="#" class="text-sm hover:text-gray-200">Forgot password</a>
+                            </div>
                         </div>
-
-                           <div class="mb-4">
-                            <a href="/register">
-                                <div class="bg-blue-500 text-white text-center p-2 rounded w-full hover:bg-blue-700">
-                                    Register
-                                </div>
-                            </a>
+                        <div class="my-10">
+                            <button type="submit" class="w-full rounded-full bg-orange-600 p-5 hover:bg-orange-800">Login</button>
                         </div>
                     </form>
                 </div>
             </div>
+        </div>
+        <div class="h-screen w-1/2 bg-blue-600">
+            <img src="https://images.pexels.com/photos/2523959/pexels-photo-2523959.jpeg" class="h-full w-full" />
         </div>
     </div>
 </body>

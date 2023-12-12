@@ -18,4 +18,8 @@ class Image extends Model
     {
         return $this->belongsTo(Tweet::class);
     }
+    public function imageable()
+    {
+        return $this->morphTo();
+    }
 }

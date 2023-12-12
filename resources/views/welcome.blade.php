@@ -39,22 +39,22 @@
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                @auth
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="text-white">Logout</button>
+                        </form>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
+                        <a href="{{ route('login') }}">Login</a>
                     @endauth
                 </div>
             @endif
 
         <!-- component -->
+        
         <div class="p-relative h-screen" style="background-color: #15202b">
             <div class="flex justify-center">
-                <header class="text-white h-12 py-4 h-auto">
+                <header class="text-white py-4 h-auto">
                     <!-- Navbar (left side) -->
                     <div style="width: 275px;">
                         <div class="overflow-y-auto fixed h-screen pr-3" style="width: 275px;">
@@ -165,8 +165,8 @@
                             <!--Content (Center)-->
                                 <aside>
                                 <div class="grid grid-cols-3 gap-4">
-                                    <div class="col-span-2 border-2 border border-y-0 border-b-4 border-blue-800 shadow-md text-white p-4">For you</div>
-                                    <div class="border-2 border border-y-0 border-gray-800 text-gray-500 p-4">Following</div>
+                                    <div class="col-span-2  border-y-0 border-b-4 border-blue-800 shadow-md text-white p-4">For you</div>
+                                    <div class="bborder-y-0 border-gray-800 text-gray-500 p-4">Following</div>
                                 </div>
 
                             <div class="flex">
@@ -199,12 +199,13 @@
                                 
                                 <div class="flex items-center justify-between mb-5">
                                      <div class="flex-1 text-center px-1 py-1 m-2 relative">
-                                        <label for="image" class="group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300 cursor-pointer">
-                                            <svg class="h-7 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                            </svg>
-                                            <input type="file" id="image" name="image" class="hidden" accept="image/*">
-                                        </label>
+                                     <label for="media" class="group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300 cursor-pointer">
+                                        <svg class="h-7 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                        </svg>
+                                        <!-- Combined file input button for images and videos -->
+                                        <input type="file" id="media" name="media" class="hidden" accept="image/*,video/*">
+                                    </label>
                                     </div>
                                     <!-- <div class="flex-1 text-center py-2 m-2">
                                             <a href="#" class="group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover-bg-gray-800 hover-text-blue-300">
@@ -236,107 +237,75 @@
                             </div>
                             
                             <main class="flex justify-center">
-
-                            
-
-
                                 <div class="text-white">
-                                    @foreach($tweets as $tweet)
-                                    <div class="items-center mt-5 mb-7 tweet-container">
-                                        <div>
-                                             <div>
-                                                <div class="flex col ml-5">
-                                                <a href="{{ route('tweets.edit', ['tweet' => $tweet]) }}" class="text-sm font-medium bg-gray-800 py-1 px-2 rounded text-white align-middle">Edit Tweet</a>
-                                                <form method="POST" action="{{ route('tweets.destroy', ['tweet' => $tweet]) }}" class="ml-5">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="text-sm font-medium bg-gray-900 py-1 px-2 rounded text-white align-middle">Delete</button>
-                                                    </form>
-                                                </div>
+                                    @if($tweets->count() > 0)
+                                        @foreach($tweets as $tweet)
+                                            <div class="items-center mt-5 mb-7 tweet-container">
+                                                <!-- Your existing tweet content here -->
+                                                <!-- ... -->
+
+                                                @if(auth()->check())
+                                                    <div class="flex col ml-5">
+                                                        <div class="text-white text-right mt-3">{{ $user->name }}</div>
+                                                    </div>
+
+                                                    <time datetime="{{ $tweet->created_at }}" class="text-gray-400 ml-5">
+                                                        {{ $tweet->created_at->format('d F \a\t H:i A') }}
+                                                    </time>
+
+                                                    <div class="text-white p-11 text-left ml-5 mb-5">{{ $tweet->content }}</div>
+
+                                                    <!-- Media display -->
+                                                    @if ($tweet->media->count() > 0)
+                                                        <div class="lg-container">
+                                                            @foreach($tweet->media as $media)
+                                                                @if ($media instanceof \App\Models\Image)
+                                                                    <!-- This is an image -->
+                                                                    <a href="{{ asset('storage/' . $media->url) }}" data-lg-size="1200-800">
+                                                                        <img src="{{ asset('storage/' . $media->url) }}" alt="Tweet Image" class="tweet-image">
+                                                                    </a>
+                                                                @elseif ($media instanceof \App\Models\Video)
+                                                                    <!-- This is a video -->
+                                                                    <video width="320" height="240" controls>
+                                                                        <source src="{{ asset('storage/' . $media->url) }}" type="video/mp4">
+                                                                        Your browser does not support the video tag.
+                                                                    </video>
+                                                                @endif
+                                                            @endforeach
+                                                        </div>
+                                                    @endif
+
+
+                                                    <div class="h-16 border-b flex items-center justify-between">
+                                                        <div class="flex items-center gap-3">
+                                                            <!-- Like Button -->    
+                                                            <button 
+                                                                class="text-orange-500 bg-transparent border border-solid border-orange-500 hover:bg-orange-500 hover:text-white active:bg-orange-600 font-bold uppercase text-xs px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ml-10 ease-linear transition-all duration-150">
+                                                                Like
+                                                            </button>
+                                                            <span id="like-count-{{ $tweet->id }}" class="ml-1">{{ $tweet->likes->count() }}</span>
+                                                        </div>
+
+                                                        <div id="app">
+                                                            <tweet-list :tweets="{{ json_encode($tweets) }}"></tweet-list>
+                                                        </div>
+
+                                                        <div class="flex items-center gap-3 text-center mr-24">
+                                                            <div class="text-sm">Share</div>
+                                                        </div>
+                                                        <div class="flex items-center gap-3 text-center mr-24">
+                                                            <div class="text-sm">Saved</div>
+                                                        </div>
+                                                    </div>
+                                                @endif
                                             </div>
-                                        </div>
-                                        @if (session('success') && session('tweet_id') == $tweet->id)
-                                            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative ml-10 mb-5 mt-5 success-message" role="alert">
-                                                <strong class="font-bold">Success!</strong>
-                                                <span class="block sm:inline">{{ session('success') }}</span>
-                                                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="text-green-400" viewBox="0 0 20 20">
-                                                        <path fill-rule="evenodd" d="M14.293 5.293a1 1 0 00-1.414 0L10 8.586 7.707 6.293a1 1 0 00-1.414 1.414L8.586 10l-2.293 2.293a1 1 0 001.414 1.414L10 11.414l2.293 2.293a1 1 0 001.414-1.414L11.414 10l2.293-2.293a1 1 0 000-1.414z" clip-rule="evenodd"></path>
-                                                    </svg>
-                                                </span>
-                                            </div>
-                                        @endif
-
-                                   
-                                    </div>
-                                  
-                                    @if(auth()->check())
-                                    <div class="flex col ml-5">
-                                     
-                                            <div class=" text-white text-right mt-3 ">{{ $user->name }}</div>
-                                         
-                                    </div>
-
-                                        <time datetime="{{ $tweet->created_at }}" class=" text-gray-400 ml-5">
-
-                                            {{ $tweet->created_at->format('d F \a\t H:i A') }}
-                                        </time>
-                                        
-                                    <div class=" text-white p-11 text-left ml-5 mb-5 ">{{ $tweet->content }}</div>
-                                    
-                                     <!-- Image display -->
-                                        @if ($tweet->images->count() > 0)
-                                            <div class="lg-container">
-                                                @foreach($tweet->images as $image)
-                                                    <a href="{{ asset('storage/' . $image->url) }}" data-lg-size="1200-800">
-                                                        <img src="{{ asset('storage/' . $image->url) }}" alt="Tweet Image" class="tweet-image">
-                                                    </a>
-                                                @endforeach
-                                            </div>
-                                        @endif
-
-                                    <div class="h-16 border-b flex items-center justify-between">
-                                        
-                                    <div class="flex items-center gap-3">
-                                        <!-- Like Button -->
-
-                                        <button > Likes</button>
-
-                                        <button 
-                                            class="text-orange-500 bg-transparent border border-solid border-orange-500 hover:bg-orange-500 hover:text-white active:bg-orange-600 font-bold uppercase text-xs px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
-                                             Likes</button>
-                                    
-                                            <span id="like-count-{{ $tweet->id }}" class="ml-1">{{ $tweet->likes->count() }}</span>
-                                        </button>
-                                        </div>
-
-                                        <div id="app">
-                                            <tweet-list :tweets="{{ json_encode($tweets) }}"></tweet-list>
-                                        </div>
-
-                                        
-                                        <div class="flex items-center gap-3">
-                                            <svg width="22px" height="22px" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M4,0 C6.209139,0 8,1.790861 8,4 C8,4.1291298 7.99388117,4.25683047 7.98191762,4.38282788 L15.371607,7.98470389 C16.0745405,7.37145444 16.9938914,7 18,7 C20.209139,7 22,8.790861 22,11 C22,13.209139 20.209139,15 18,15 C16.9572434,15 16.0076801,14.6009919 15.2956607,13.9473263 L7.98384745,17.6380767 C7.99453877,17.7572882 8,17.8780063 8,18 C8,20.209139 6.209139,22 4,22 C1.790861,22 0,20.209139 0,18 C0,15.790861 1.790861,14 4,14 C5.37147453,14 6.58173814,14.690226 7.30236849,15.7422555 L14.2017356,12.2577203 C14.0708451,11.8622268 14,11.4393868 14,11 C14,10.5276126 14.0818865,10.0743509 14.2322392,9.65363512 L7.29274641,6.27172794 C6.57099412,7.31588608 5.36538874,8 4,8 C1.790861,8 0,6.209139 0,4 C0,1.790861 1.790861,0 4,0 Z M4,16 C2.8954305,16 2,16.8954305 2,18 C2,19.1045695 2.8954305,20 4,20 C5.1045695,20 6,19.1045695 6,18 C6,16.8954305 5.1045695,16 4,16 Z M18,9 C16.8954305,9 16,9.8954305 16,11 C16,12.1045695 16.8954305,13 18,13 C19.1045695,13 20,12.1045695 20,11 C20,9.8954305 19.1045695,9 18,9 Z M4,2 C2.8954305,2 2,2.8954305 2,4 C2,5.1045695 2.8954305,6 4,6 C5.1045695,6 6,5.1045695 6,4 C6,2.8954305 5.1045695,2 4,2 Z"
-                                                    id="Combined-Shape"></path>
-                                            </svg>
-                                            <div class="text-sm">Share</div>
-                                        </div>
-                                        <div class="flex items-center gap-3">
-                                            <svg width="17px" height="22px" viewBox="0 0 17 22" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M2.85714286,-0.952380952 L12.1428571,-0.952380952 C14.246799,-0.952380952 15.952381,0.753200953 15.952381,2.85714286 L15.952381,18.2119141 C15.952381,19.263885 15.09959,20.116746 14.047619,20.116746 C13.6150601,20.116746 13.1953831,19.9694461 12.8576286,19.6992071 L7.5,15.4125421 L2.14237143,19.6992071 C1.32096217,20.3564207 0.122301512,20.2233138 -0.534912082,19.4019046 C-0.805151112,19.0641501 -0.952380952,18.644473 -0.952380952,18.2119141 L-0.952380952,2.85714286 C-0.952380952,0.753200953 0.753200953,-0.952380952 2.85714286,-0.952380952 Z M2.85714286,0.952380952 C1.80517191,0.952380952 0.952380952,1.80517191 0.952380952,2.85714286 L0.952380952,18.2119141 L6.31000952,13.9252491 C7.00569973,13.3686239 7.99430027,13.3686239 8.68999048,13.9252491 L14.047619,18.2119141 L14.047619,2.85714286 C14.047619,1.80517191 13.1948281,0.952380952 12.1428571,0.952380952 L2.85714286,0.952380952 Z"
-                                                    id="Rectangle-92"></path>
-                                            </svg>
-                                            <div class="text-sm">Saved</div>
-                                        </div>
-                                        @endif
-                                    </div>
-                                    
-                                    @endforeach
+                                        @endforeach
+                                    @else
+                                        <p>No tweets available.</p>
+                                    @endif
                                 </div>
                             </main>
+
                             <!-- <div class="flex items-center justify-between ml-10 mt-4">
                                 <div class="bg-gray-50 h-11 w-11/12 flex items-center rounded-full">
                                     <form method="POST" action="{{ route('comments.store', $tweet->id) }}">
@@ -366,7 +335,7 @@
                             </svg>
                         </button>
 
-                        <input type="search" name="search" placeholder="Search Twitter" class=" bg-dim-700 h-10 px-10 pr-5 w-full rounded-full text-sm focus:outline-none bg-purple-white shadow rounded border-0">
+                        <input type="search" name="search" placeholder="Search Twitter" class=" bg-dim-700 h-10 px-10 pr-5 w-full text-sm focus:outline-none bg-purple-white shadow rounded border-0">
                     </div>
 
 
@@ -536,7 +505,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flow-root m-6 inline">
+                        <div class="flow-root m-6">
                                     <div class="flex-1">
                                         <a href="#">
                                             <p class="text-sm leading-6 font-medium text-gray-500">Terms Privacy Policy Cookies Imprint Ads info
