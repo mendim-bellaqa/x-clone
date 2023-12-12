@@ -15,11 +15,14 @@ class Image extends Model
     // Define relationships and methods here
 
     public function tweet()
-    {
-        return $this->belongsTo(Tweet::class);
-    }
+
+        {
+            return $this->belongsTo(Tweet::class);
+        }
+
     public function imageable()
-    {
-        return $this->morphTo();
-    }
+    
+        {
+            return $this->morphTo();
+        }
 }

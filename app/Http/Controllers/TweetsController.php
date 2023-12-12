@@ -18,44 +18,44 @@ class TweetsController extends Controller
     }
 
     public function store(Request $request)
-{
-    $request->validate([
-        'content' => 'nullable|string|max:255',
-        'media' => 'nullable|mimes:jpeg,jpg,png,mp4|max:10240',
-    ]);
-
-    $tweet = new Tweet([
-        'content' => $request->input('content'),
-        'user_id' => auth()->user()->id,
-    ]);
-
-    $tweet->save();
-
-    // Handle media upload (image or video) if provided
-    if ($request->hasFile('media')) {
-        $mediaPath = $request->file('media')->store('media', 'public');
-
-        // Determine whether it's an image or video based on the file extension
-        $extension = $request->file('media')->getClientOriginalExtension();
-
-        if (in_array($extension, ['jpeg', 'jpg', 'png'])) {
-            // It's an image
-            $media = new Image([
-                'url' => $mediaPath,
+        {
+            $request->validate([
+                'content' => 'nullable|string|max:255',
+                'media' => 'nullable|mimes:jpeg,jpg,png,mp4|max:10240',
             ]);
-        } elseif ($extension === 'mp4') {
-            // It's a video
-            $media = new Video([
-                'url' => $mediaPath,
+
+            $tweet = new Tweet([
+                'content' => $request->input('content'),
+                'user_id' => auth()->user()->id,
             ]);
+
+            $tweet->save();
+
+            // Handle media upload (image or video) if provided
+            if ($request->hasFile('media')) {
+                $mediaPath = $request->file('media')->store('media', 'public');
+
+                // Determine whether it's an image or video based on the file extension
+                $extension = $request->file('media')->getClientOriginalExtension();
+
+                if (in_array($extension, ['jpeg', 'jpg', 'png'])) {
+                    // It's an image
+                    $media = new Image([
+                        'url' => $mediaPath,
+                    ]);
+                } elseif ($extension === 'mp4') {
+                    // It's a video
+                    $media = new Video([
+                        'url' => $mediaPath,
+                    ]);
+                }
+
+                // Save the media relation and associate it with the tweet
+                $tweet->media()->save($media);
+            }
+
+            return redirect()->back()->with('success', 'Tweet created successfully!');
         }
-
-        // Save the media relation
-        $tweet->media()->save($media);
-    }
-
-    return redirect()->back()->with('success', 'Tweet created successfully!');
-}
 
     public function edit(Tweet $tweet)
     {
@@ -99,18 +99,31 @@ class TweetsController extends Controller
                     'content' => $request->input('content'),
                 ]);
 
-                // Handle image upload if provided
-                if ($request->hasFile('image')) {
-                    $imagePath = $request->file('image')->store('images', 'public');
-                    $image = new Image([
-                        'url' => $imagePath,
-                    ]);
-                    $tweet->images()->save($image);
+                // Handle media upload if provided
+                if ($request->hasFile('media')) {
+                    $mediaPath = $request->file('media')->store('media', 'public');
+
+                    // Determine whether it's an image or video based on the file extension
+                    $extension = $request->file('media')->getClientOriginalExtension();
+
+                    if (in_array($extension, ['jpeg', 'jpg', 'png'])) {
+                        // It's an image
+                        $media = new Image([
+                            'url' => $mediaPath,
+                        ]);
+                    } elseif ($extension === 'mp4') {
+                        // It's a video
+                        $media = new Video([
+                            'url' => $mediaPath,
+                        ]);
+                    }
+
+                    // Save the media relation and associate it with the tweet
+                    $tweet->media()->save($media);
                 }
-                session(['tweet_id' => $tweet->id]);
+
                 return redirect()->route('home')->with('success', 'Tweet updated successfully!');
             }
-
 
 
     public function index()
