@@ -29,15 +29,11 @@ class Tweet extends Model
         return $this->hasMany(Like::class);
     }
 
-    
-
-    public function images()
-    {
-        return $this->hasMany(Image::class);
+    public function images() {
+        return $this->morphMany(Image::class, 'mediable');
     }
 
-    public function media(): MorphMany
-    {
-        return $this->morphMany(\App\Models\Media::class, 'mediable');
+    public function media() {
+        return $this->hasMany(Media::class);
     }
 }

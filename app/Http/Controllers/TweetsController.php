@@ -18,44 +18,40 @@ class TweetsController extends Controller
     }
 
     public function store(Request $request)
-        {
-            $request->validate([
-                'content' => 'nullable|string|max:255',
-                'media' => 'nullable|mimes:jpeg,jpg,png,mp4|max:10240',
-            ]);
-
-            $tweet = new Tweet([
-                'content' => $request->input('content'),
-                'user_id' => auth()->user()->id,
-            ]);
-
-            $tweet->save();
-
-            // Handle media upload (image or video) if provided
-            if ($request->hasFile('media')) {
-                $mediaPath = $request->file('media')->store('media', 'public');
-
-                // Determine whether it's an image or video based on the file extension
-                $extension = $request->file('media')->getClientOriginalExtension();
-
-                if (in_array($extension, ['jpeg', 'jpg', 'png'])) {
-                    // It's an image
-                    $media = new Image([
-                        'url' => $mediaPath,
-                    ]);
-                } elseif ($extension === 'mp4') {
-                    // It's a video
-                    $media = new Video([
-                        'url' => $mediaPath,
-                    ]);
-                }
-
-                // Save the media relation and associate it with the tweet
-                $tweet->media()->save($media);
+    {
+        $request->validate([
+            'content' => 'nullable|string|max:255',
+            'media' => 'nullable|mimes:jpeg,jpg,png,mp4|max:10240',
+        ]);
+    
+        // Create the tweet
+        $tweet = new Tweet([
+            'content' => $request->input('content'),
+            'user_id' => auth()->user()->id,
+        ]);
+    
+        $tweet->save();
+    
+        // Handle media upload (image or video) if provided
+        if ($request->hasFile('media')) {
+            $mediaPath = $request->file('media')->store('media', 'public');
+    
+            // Determine whether it's an image or video based on the file extension
+            $extension = $request->file('media')->getClientOriginalExtension();
+    
+            if (in_array($extension, ['jpeg', 'jpg', 'png'])) {
+                // It's an image
+                $media = new Image([
+                    'url' => $mediaPath,
+                ]);
+            
+                // Save the media relation
+                $tweet->images()->save($media);
             }
-
-            return redirect()->back()->with('success', 'Tweet created successfully!');
         }
+    
+        return redirect()->back()->with('success', 'Tweet created successfully!');
+    }   
 
     public function edit(Tweet $tweet)
     {
@@ -90,9 +86,14 @@ class TweetsController extends Controller
             {
                 $request->validate([
                     'content' => 'nullable|string|max:255',
-                    'media' => 'nullable|mimes:jpeg,jpg,png,mp4|max:10240', // Adjust the validation rules
-                    // Other validation rules for image, if needed
+                    'media' => 'nullable|mimetypes:video/mp4|max:10240',
                 ]);
+                
+                // Handle media upload (video) if provided
+                if ($request->hasFile('media')) {
+                    $videoPath = $request->file('media')->store('media', 'public');
+                    // ... (other code for creating the Tweet and associating the video)
+                }
 
                 // Update the tweet's content
                 $tweet->update([

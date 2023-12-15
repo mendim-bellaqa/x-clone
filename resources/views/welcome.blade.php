@@ -206,6 +206,19 @@
                                         <!-- Combined file input button for images and videos -->
                                         <input type="file" id="media" name="media" class="hidden" accept="image/*,video/*">
                                     </label>
+
+                                      <template>
+                                        <label for="media" class="group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300 cursor-pointer">
+                                            <svg class="h-7 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                            </svg>
+                                            <input type="file" id="media" name="media" class="hidden" accept="image/*,video/*">
+                                            </label>
+
+                                            <video-upload></video-upload>
+                                    </template>
+
+
                                     </div>
                                     <!-- <div class="flex-1 text-center py-2 m-2">
                                             <a href="#" class="group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover-bg-gray-800 hover-text-blue-300">
@@ -306,20 +319,7 @@
                                 </div>
                             </main>
 
-                            <!-- <div class="flex items-center justify-between ml-10 mt-4">
-                                <div class="bg-gray-50 h-11 w-11/12 flex items-center rounded-full">
-                                    <form method="POST" action="{{ route('comments.store', $tweet->id) }}">
-                                        @csrf
-                                        <div class="flex items-center space-x-2 text-gray-700">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3-3m0 0l-3 3m3-3h12m5 8v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2z"></path>
-                                            </svg>
-                                        </div>
-                                        <input type="text" class="h-11 w-full bg-gray-100 text-gray-700 text-center outline-none rounded-full focus:bg-white"
-                                            placeholder="Add a comment..." name="comment">
-                                    </form>
-                                </div>
-                            </div> -->
+                      
                     </section>
 
 
@@ -553,6 +553,26 @@
         fill: currentcolor;
         }
     </style>
+
+
+<script>
+export default {
+  data() {
+    return {
+      videoPreview: null,
+    };
+  },
+  methods: {
+    handleFileChange(event) {
+      const file = event.target.files[0];
+      if (file) {
+        this.videoPreview = URL.createObjectURL(file);
+      }
+    },
+  },
+};
+</script>
+
 
 <script>
 export default {

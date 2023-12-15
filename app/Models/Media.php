@@ -9,13 +9,9 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Media extends Model
 {
-    protected $fillable = ['url']; // Add other fillable fields as needed
+    protected $fillable = ['url', 'type'];
 
-    /**
-     * Get the owning mediable model.
-     */
-    public function mediable(): MorphTo
-    {
-        return $this->morphTo();
+    public function tweet() {
+        return $this->belongsTo(Tweet::class);
     }
 }
