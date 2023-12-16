@@ -17,6 +17,7 @@
         <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lg-thumbnail.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lg-fullscreen.min.js"></script>
         <script src="{{ mix('js/app.js') }}"></script>
+        <script src="http://localhost:8000/js/app.js" defer></script>
 
         <!-- Styles -->
         <link href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css" rel="stylesheet">
@@ -35,7 +36,10 @@
         </style>
     </head>
     <body class="antialiased">
-        
+    <div id="app">
+        <example-component></example-component>
+    </div>
+    <script src="{{ mix('js/app.js') }}" defer></script>
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -51,7 +55,17 @@
             @endif
 
         <!-- component -->
-        
+        <!-- welcome.blade.php -->
+
+            @extends('layouts.app')
+
+            @section('content')
+            <!-- Your existing content -->
+
+            <create-tweet></create-tweet>
+            
+            <!-- Additional content or tweet listing can go here -->
+            @endsection
         <div class="p-relative h-screen" style="background-color: #15202b">
             <div class="flex justify-center">
                 <header class="text-white py-4 h-auto">
@@ -198,48 +212,13 @@
                                 </div>
                                 
                                 <div class="flex items-center justify-between mb-5">
-                                     <div class="flex-1 text-center px-1 py-1 m-2 relative">
-                                     <label for="media" class="group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300 cursor-pointer">
-                                        <svg class="h-7 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                        </svg>
-                                        <!-- Combined file input button for images and videos -->
-                                        <input type="file" id="media" name="media" class="hidden" accept="image/*,video/*">
-                                    </label>
 
-                                      <template>
-                                        <label for="media" class="group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300 cursor-pointer">
-                                            <svg class="h-7 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                            </svg>
-                                            <input type="file" id="media" name="media" class="hidden" accept="image/*,video/*">
-                                            </label>
-
+                                    <div class="flex-1 text-center px-1 py-1 m-2 relative">
+                                        <div class="flex-1 text-center px-1 py-1 m-2 relative">
                                             <video-upload></video-upload>
-                                    </template>
-
-
-                                    </div>
-                                    <!-- <div class="flex-1 text-center py-2 m-2">
-                                            <a href="#" class="group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover-bg-gray-800 hover-text-blue-300">
-                                                <svg class="h-7 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
-                                                    <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                                </svg>
-                                            </a>
                                         </div>
-
-                                        <div class="flex-1 text-center py-2 m-2">
-                                            <a href="#" class="group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover-bg-gray-800 hover-text-blue-300">
-                                                <svg class="h-7 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                                </svg>
-                                            </a>
-                                    </div> -->
-                                    <div class="w-64 px-4 mb-5">
-                                      </div>
-
-                                    <button type="submit" class="bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-8 rounded-full mt-2">Post</button>
+                                    </div>
+                                     <button type="submit" class="bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-8 rounded-full mt-2">Post</button>
                                 </div>
 
                                 <hr class="border-gray-800 border-4">
@@ -267,27 +246,6 @@
                                                     </time>
 
                                                     <div class="text-white p-11 text-left ml-5 mb-5">{{ $tweet->content }}</div>
-
-                                                    <!-- Media display -->
-                                                    @if ($tweet->media->count() > 0)
-                                                        <div class="lg-container">
-                                                            @foreach($tweet->media as $media)
-                                                                @if ($media instanceof \App\Models\Image)
-                                                                    <!-- This is an image -->
-                                                                    <a href="{{ asset('storage/' . $media->url) }}" data-lg-size="1200-800">
-                                                                        <img src="{{ asset('storage/' . $media->url) }}" alt="Tweet Image" class="tweet-image">
-                                                                    </a>
-                                                                @elseif ($media instanceof \App\Models\Video)
-                                                                    <!-- This is a video -->
-                                                                    <video width="320" height="240" controls>
-                                                                        <source src="{{ asset('storage/' . $media->url) }}" type="video/mp4">
-                                                                        Your browser does not support the video tag.
-                                                                    </video>
-                                                                @endif
-                                                            @endforeach
-                                                        </div>
-                                                    @endif
-
 
                                                     <div class="h-16 border-b flex items-center justify-between">
                                                         <div class="flex items-center gap-3">
@@ -556,20 +514,13 @@
 
 
 <script>
+import VideoUpload from '../components/VideoUpload.vue';
+
 export default {
-  data() {
-    return {
-      videoPreview: null,
-    };
+  components: {
+    VideoUpload
   },
-  methods: {
-    handleFileChange(event) {
-      const file = event.target.files[0];
-      if (file) {
-        this.videoPreview = URL.createObjectURL(file);
-      }
-    },
-  },
+  // ... other component options ...
 };
 </script>
 
