@@ -24,6 +24,6 @@
     },
     "dependencies": {
         "confetti-js": "^0.0.18",
-        "vue": "^3.3.11"
+        "vue": "^3.3.12"
     }
 }
